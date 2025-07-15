@@ -1,0 +1,795 @@
+/* Styles globaux */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+html, body {
+  height: 100%; /* Assure que le body occupe toute la hauteur de la page */
+  margin: 0; /* Supprime les marges par défaut */
+}
+
+main {
+  flex: 1; /* Permet au contenu principal de prendre l'espace disponible */
+}
+
+footer {
+  margin-top: auto; /* Force le footer à rester en bas */
+  position: relative; /* Assure que le footer est bien positionné */
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  background-color: #1d3557;
+  color: white;
+  padding: 20px 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.burger span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+#nav-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100%;
+  background-color: #1d3557;
+  transition: right 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#nav-menu.active {
+  right: 0;
+}
+
+#nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#nav-menu li {
+  margin: 15px 0;
+}
+
+#nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Section Hero */
+.hero {
+  background-color: #457b9d;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero h2 {
+  font-size: 2rem;
+}
+
+.hero p {
+  font-size: 1rem;
+}
+
+/* Section Services */
+.services {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.services h2 {
+  font-family: 'Roboto', sans-serif; /* Police moderne et lisible */
+  font-size: 2.5rem; /* Taille de police agrandie */
+  color: #0d47a1; /* Couleur du texte */
+  text-align: center; /* Centrer le titre */
+  margin-bottom: 20px; /* Espacement sous le titre */
+}
+
+.services .container {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* La colonne texte est plus large que l'image */
+  gap: 40px; /* Augmenter l'espacement entre les colonnes */
+  align-items: center; /* Aligner verticalement les éléments */
+}
+
+.services .container div {
+  padding: 20px; /* Ajouter de l'espacement interne */
+}
+
+.services .container div:first-child {
+  display: flex;
+  flex-direction: column; /* Aligner les éléments verticalement */
+  align-items: flex-start; /* Aligner à gauche */
+  gap: 20px; /* Espacement entre les éléments */
+}
+
+.services ul {
+  flex: 1; /* Prend 1 part de l'espace */
+  text-align: left; /* Aligner le texte à gauche */
+  list-style: none; /* Suppression des points de la liste */
+  padding: 0; /* Suppression des marges internes */
+}
+
+.services li {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.services .image {
+  text-align: center; /* Centrer l'image */
+}
+
+.services .image img {
+  max-width: 100%; /* Image responsive */
+  height: auto; /* Maintenir les proportions */
+  border-radius: 10px; /* Coins arrondis pour un design moderne */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajouter une ombre légère */
+  display: inline-block; /* Assure que l'image est rendue */
+}
+
+.services .btn {
+  display: flex; /* Utilisation de flexbox pour le centrage */
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  margin: 20px auto; /* Centre le bouton avec une marge automatique */
+  width: fit-content; /* Ajuste la largeur au contenu */
+  padding: 15px 30px; /* Espacement interne augmenté pour un meilleur confort visuel */
+  background: linear-gradient(45deg, #0077b6, #00b4d8); /* Dégradé moderne */
+  color: #ffffff; /* Couleur du texte */
+  font-size: 1.3rem; /* Taille de police légèrement agrandie */
+  font-weight: bold; /* Texte en gras */
+  text-transform: uppercase; /* Texte en majuscules */
+  border: none; /* Suppression des bordures */
+  border-radius: 12px; /* Coins plus arrondis pour un design moderne */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Ombre plus marquée pour un effet de relief */
+  cursor: pointer; /* Curseur pointer pour indiquer l'interactivité */
+  transition: all 0.3s ease; /* Transition fluide pour les interactions */
+}
+
+/* Ajout d'un effet visuel pour les appareils mobiles en utilisant :active pour simuler le hover */
+.services .btn:active {
+  background: linear-gradient(45deg, #005f73, #0096c7); /* Couleur plus sombre au clic */
+  transform: scale(1.1); /* Mise en avant au clic */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Réduction de l'ombre au clic */
+}
+
+/* Ajout d'une règle CSS plus spécifique pour forcer le centrage du bouton dans la section 'Services' */
+.services .container .btn {
+  margin: 20px auto !important; /* Forcer le centrage horizontalement */
+  text-align: center;
+}
+
+/* Section Demarches */
+.demarches {
+  padding: 50px 20px;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.demarches h2 {
+  font-size: 2.5rem;
+  margin-top: 40px; /* Augmente la marge supérieure */
+  margin-bottom: 20px; /* Augmente la marge inférieure */
+  color: #0d47a1;
+}
+
+.demarches ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.demarches li {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  background-color: #e3f2fd; /* Couleur de fond douce */
+  border: 1px solid #90caf9; /* Bordure colorée */
+  color: #0d47a1; /* Couleur du texte */
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.demarches li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  background-color: #bbdefb; /* Couleur de fond au survol */
+  border-color: #42a5f5; /* Bordure au survol */
+}
+
+.demarches a {
+  color: inherit; /* Harmonise la couleur des liens avec le texte environnant */
+  text-decoration: none; /* Supprime le soulignement par défaut */
+}
+
+.demarches a:hover {
+  text-decoration: underline; /* Ajoute un soulignement au survol pour indiquer l'interactivité */
+}
+
+.demarches a.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #0d47a1; /* Couleur de fond du bouton */
+  color: #fff; /* Couleur du texte du bouton */
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+/* Section Horaires */
+.horaires {
+  text-align: center; /* Centre le texte */
+  margin: 40px auto; /* Centre la section horizontalement */
+  max-width: 800px; /* Limite la largeur pour un meilleur alignement */
+}
+
+.horaires h2 {
+  font-size: 2.5rem; /* Augmente la taille du titre */
+  margin-bottom: 20px; /* Ajoute un espacement sous le titre */
+  color: #0d47a1; /* Couleur du texte du titre */
+}
+
+.horaires-table {
+  width: 100%; /* Prend toute la largeur disponible */
+  border-collapse: collapse; /* Supprime les espaces entre les bordures des cellules */
+  margin: 20px 0; /* Marge verticale autour du tableau */
+  font-size: 1.2rem; /* Taille de police pour le texte du tableau */
+  text-align: left; /* Aligne le texte à gauche dans les cellules */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour un effet de relief */
+}
+
+.horaires-table th,
+.horaires-table td {
+  padding: 12px 15px; /* Espacement interne des cellules */
+  border: 1px solid #ddd; /* Bordure légère autour des cellules */
+}
+
+.horaires-table thead th {
+  background-color: #457b9d; /* Couleur de fond des en-têtes */
+  color: #fff; /* Couleur du texte des en-têtes */
+  text-align: center; /* Centre le texte des en-têtes */
+}
+
+.horaires-table tbody tr:nth-child(even) {
+  background-color: #f3f3f3; /* Couleur de fond des lignes paires */
+}
+
+.horaires-table tbody tr.ferme {
+  background-color: #ffe6e6; /* Couleur de fond pour les lignes "ferme" */
+  color: #d32f2f; /* Couleur du texte pour les lignes "ferme" */
+  font-weight: bold; /* Texte en gras pour les lignes "ferme" */
+}
+
+.horaires-table tbody tr:hover {
+  background-color: #f1f1f1; /* Couleur de fond au survol */
+}
+
+/* Footer */
+footer {
+  background-color: #1d3557; /* Couleur de fond du footer */
+  color: #fff; /* Couleur du texte */
+  padding: 20px 0; /* Espacement interne */
+  text-align: center; /* Centrer le contenu */
+  font-size: 1.3rem; /* Augmentation supplémentaire de la taille de la police */
+  margin-top: auto; /* Force le footer à rester en bas */
+  position: relative; /* Assure que le footer est bien positionné */
+}
+
+.footer-container {
+  display: flex; /* Disposition en colonnes */
+  flex-wrap: wrap; /* Permettre le retour à la ligne */
+  justify-content: space-around; /* Espacement entre les colonnes */
+  max-width: 1200px; /* Limiter la largeur */
+  margin: 0 auto; /* Centrer le footer */
+}
+
+.footer-col {
+  flex: 1; /* Chaque colonne prend une part égale */
+  min-width: 200px; /* Largeur minimale des colonnes */
+  margin: 10px; /* Espacement entre les colonnes */
+}
+
+.footer-col h3 {
+  font-size: 1.5rem; /* Augmentation supplémentaire de la taille des titres */
+  margin-bottom: 10px; /* Espacement sous le titre */
+}
+
+.footer-col p {
+  font-size: 1.2rem; /* Augmentation supplémentaire de la taille du texte */
+  line-height: 1.6; /* Hauteur de ligne pour une meilleure lisibilité */
+}
+
+/* Annonce */
+#announcement {
+  background-color: #ffcc00; /* Couleur de fond voyante */
+  color: #000; /* Couleur du texte */
+  font-size: 1.5rem; /* Taille de police agrandie */
+  font-weight: bold; /* Texte en gras */
+  text-align: center; /* Centrer le texte */
+  padding: 10px; /* Espacement interne */
+  margin: 20px 0; /* Espacement externe */
+  border-radius: 5px; /* Coins arrondis */
+  display: none; /* Par défaut, caché */
+}
+
+/* Documents */
+.documents {
+  margin: 40px auto; /* Centrer la section avec des marges */
+  max-width: 800px; /* Limiter la largeur pour une meilleure lisibilité */
+  padding: 20px; /* Ajouter de l'espacement interne */
+  background-color: #f9f9f9; /* Couleur de fond douce */
+  border: 1px solid #ddd; /* Bordure légère */
+  border-radius: 8px; /* Coins arrondis */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre pour un effet de relief */
+}
+
+.documents h2 {
+  font-size: 2rem; /* Taille de police agrandie pour le titre */
+  color: #0d47a1; /* Couleur du texte */
+  text-align: center; /* Centrer le titre */
+  margin-bottom: 20px; /* Espacement sous le titre */
+}
+
+.documents p {
+  font-size: 1.2rem; /* Taille de police confortable */
+  color: #333; /* Couleur du texte */
+  line-height: 1.6; /* Hauteur de ligne pour une meilleure lisibilité */
+  margin-bottom: 20px; /* Espacement sous le paragraphe */
+}
+
+.documents ul {
+  list-style: disc inside; /* Style des puces à l'intérieur */
+  padding: 0; /* Supprimer les marges internes */
+  margin: 0; /* Supprimer les marges externes */
+}
+
+.documents ul li {
+  margin-bottom: 10px; /* Espacement entre les éléments de la liste */
+  font-size: 1.1rem; /* Taille de police légèrement agrandie */
+  color: #555; /* Couleur du texte des éléments */
+  display: flex; /* Aligner les éléments sur une ligne */
+  align-items: center; /* Centrer verticalement */
+  gap: 10px; /* Augmenter légèrement l'espacement entre le texte et le bouton */
+}
+
+.documents ul li button {
+  padding: 5px 10px; /* Taille du bouton */
+  background-color: #0d47a1; /* Couleur de fond */
+  color: #fff; /* Couleur du texte */
+  border: none; /* Suppression des bordures */
+  border-radius: 5px; /* Coins arrondis */
+  cursor: pointer; /* Curseur pointer */
+  transition: background-color 0.3s; /* Transition pour l'effet au survol */
+}
+
+.documents ul li button:hover {
+  background-color: #1565c0; /* Couleur au survol */
+}
+
+/* Formulaire de contact */
+.contact-form {
+  background-color: #f9f9f9; /* Couleur de fond douce */
+  padding: 20px; /* Espacement interne */
+  border-radius: 8px; /* Coins arrondis */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre pour un effet de relief */
+  max-width: 600px; /* Limite la largeur */
+  margin: 20px auto; /* Centre le formulaire */
+}
+
+.contact-form h2 {
+  font-size: 2rem; /* Taille de police agrandie */
+  color: #0d47a1; /* Couleur du texte */
+  text-align: center; /* Centrer le titre */
+  margin-bottom: 20px; /* Espacement sous le titre */
+}
+
+.contact-form label {
+  display: block; /* Chaque label sur une nouvelle ligne */
+  font-size: 1.1rem; /* Taille de police confortable */
+  color: #333; /* Couleur du texte */
+  margin-bottom: 5px; /* Espacement sous le label */
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%; /* Champs prennent toute la largeur */
+  padding: 10px; /* Espacement interne */
+  margin-bottom: 15px; /* Espacement entre les champs */
+  border: 1px solid #ddd; /* Bordure légère */
+  border-radius: 5px; /* Coins arrondis */
+  font-size: 1rem; /* Taille de police */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Ombre interne légère */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #0d47a1; /* Couleur de bordure au focus */
+  outline: none; /* Supprime le contour par défaut */
+  box-shadow: 0 0 5px rgba(13, 71, 161, 0.5); /* Effet lumineux au focus */
+}
+
+.contact-form button {
+  display: block; /* Bouton centré */
+  width: 100%; /* Prend toute la largeur */
+  padding: 10px; /* Espacement interne */
+  background-color: #0d47a1; /* Couleur de fond */
+  color: #fff; /* Couleur du texte */
+  border: none; /* Supprime les bordures */
+  border-radius: 5px; /* Coins arrondis */
+  font-size: 1.2rem; /* Taille de police */
+  font-weight: bold; /* Texte en gras */
+  cursor: pointer; /* Curseur pointer */
+  transition: background-color 0.3s, transform 0.2s; /* Transition fluide */
+}
+
+.contact-form button:hover {
+  background-color: #1565c0; /* Couleur au survol */
+}
+
+.contact-form button:active {
+  transform: scale(0.98); /* Légère réduction au clic */
+}
+
+/* Styles pour les pages login et admin */
+.login-container, .admin-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.login-container h1, .admin-container h1 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+form input, form textarea, form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+form button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+#status {
+  text-align: center;
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+
+#error {
+  text-align: center;
+  font-size: 0.9em;
+}
+
+/* Effets hover pour les liens */
+nav a:hover {
+  color: #00b4d8; /* Changement de couleur au survol */
+  text-decoration: underline; /* Ajout d'un soulignement */
+}
+
+/* Effets hover pour les boutons */
+button:hover, .btn:hover {
+  background-color: #00b4d8; /* Couleur de fond au survol */
+  transform: scale(1.05); /* Légère mise en avant */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ombre plus marquée */
+}
+
+/* Effets actifs pour les liens */
+nav a:active {
+  color: #00b4d8; /* Changement de couleur au clic */
+  text-decoration: underline; /* Ajout d'un soulignement */
+}
+
+/* Effets actifs pour les boutons */
+button:active, .btn:active {
+  background-color: #1d3557; /* Couleur de fond au clic */
+  transform: scale(0.95); /* Légère réduction pour un effet de clic */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre réduite au clic */
+}
+
+/* Style pour le bouton 'Retour' */
+.back-button {
+  margin: 10px auto;
+  text-align: left;
+  max-width: 400px;
+}
+
+.back-button a {
+  display: inline-block;
+  color: #007BFF;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 5px 10px;
+  border: 1px solid #007BFF;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.back-button a:hover {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+  }
+
+  .burger span {
+    height: 3px;
+    width: 25px;
+    background: white;
+    margin: 4px 0;
+    transition: 0.3s;
+  }
+
+  #nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100%;
+    background-color: #1d3557;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #nav-menu.active {
+    right: 0;
+  }
+
+  #nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #nav-menu li {
+    margin: 15px 0;
+  }
+
+  #nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .hero {
+    margin-top: 0; /* Supprime le margin-top ajouté précédemment */
+    padding: 10px 5px; /* Réduction supplémentaire du padding pour diminuer encore la hauteur */
+  }
+
+  .hero h2 {
+    font-size: 1.5rem; /* Réduction supplémentaire de la taille du texte */
+    margin-bottom: 3px; /* Réduction de l'espacement sous le titre */
+  }
+
+  .hero p {
+    font-size: 0.9rem; /* Réduction supplémentaire de la taille du paragraphe */
+    margin-bottom: 5px; /* Réduction de l'espacement sous le paragraphe */
+  }
+
+  .services .container {
+    grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    text-align: center; /* Centrer le contenu */
+  }
+
+  .services .container div {
+    padding: 10px; /* Réduire l'espacement interne */
+  }
+
+  .services .image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .services h2 {
+    margin: 0 auto; /* Centrer le titre horizontalement */
+    text-align: center; /* Centrer le texte */
+    display: block; /* Assurer que le titre est un bloc */
+  }
+
+  .services .container h2 {
+    text-align: center !important; /* Forcer le centrage en mobile */
+  }
+
+  footer {
+    padding: 5px 2px; /* Réduction maximale du padding pour minimiser la hauteur */
+  }
+
+  .footer-container {
+    flex-direction: column; /* Aligner les colonnes verticalement */
+    gap: 5px; /* Espacement minimal entre les colonnes */
+  }
+
+  .footer-col {
+    min-width: auto; /* Supprimer la largeur minimale pour un meilleur ajustement */
+    margin: 2px 0; /* Réduction maximale des marges */
+  }
+
+  .footer-col h3 {
+    font-size: 1rem; /* Réduction maximale de la taille des titres */
+    margin-bottom: 3px; /* Réduction de l'espacement sous les titres */
+  }
+
+  .footer-col p {
+    font-size: 0.8rem; /* Réduction maximale de la taille du texte */
+    line-height: 1.2; /* Ajustement de la hauteur de ligne pour compacité */
+  }
+}
+
+@media (min-width: 769px) {
+  #nav-menu {
+    display: flex !important; /* Assure que le menu est visible */
+    position: static; /* Supprime la position relative ou absolue */
+    flex-direction: row; /* Aligne les éléments horizontalement */
+    background-color: transparent; /* Supprime le fond pour le desktop */
+    width: auto; /* Ajuste la largeur pour le desktop */
+    max-height: none; /* Supprime la limite de hauteur */
+    opacity: 1; /* Assure la visibilité */
+    transform: none; /* Supprime les transformations */
+  }
+
+  nav ul {
+    display: flex; /* Assure que les éléments sont alignés horizontalement */
+    margin: 0;
+    padding: 0;
+  }
+
+  nav li {
+    margin: 0 15px; /* Espacement entre les éléments */
+  }
+
+  .services .container {
+    display: flex; /* Utilisation de flexbox pour aligner les éléments */
+    flex-direction: column; /* Aligner les éléments verticalement */
+    align-items: center; /* Centre horizontalement tous les éléments */
+  }
+
+  .services .btn {
+    align-self: center; /* Centre le bouton dans le conteneur global */
+    margin: 20px 0; /* Ajoute un espacement vertical */
+  }
+
+  .services .image img {
+    max-width: 70%; /* Réduit la taille de l'image à 70% de la largeur */
+    height: auto; /* Maintient les proportions */
+  }
+
+  /* Masquer le menu burger en mode desktop */
+  @media (min-width: 768px) {
+    .burger {
+      display: none;
+    }
+
+    #nav-menu {
+      position: static;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      background-color: transparent;
+      width: auto;
+      height: auto;
+    }
+
+    #nav-menu ul {
+      display: flex;
+      gap: 20px;
+    }
+
+    #nav-menu li {
+      margin: 0;
+    }
+
+    #nav-menu a {
+      font-size: 1rem;
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  /* Harmonisation du footer en mode desktop */
+  @media (min-width: 768px) {
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .footer-col:last-child {
+      flex-basis: 100%;
+      text-align: center;
+      margin-top: 20px;
+    }
+  }
+}

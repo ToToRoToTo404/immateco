@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administration - Bandeau d'annonce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="back-button">
+    <a href="index.html" style="text-decoration: none; color: #007BFF; font-size: 1em;">&larr; Retour</a>
+  </div>
+  <div class="admin-container">
+    <h1>Administration - Bandeau d'annonce</h1>
+    <form id="admin-form">
+      <label for="message">Message du bandeau :</label>
+      <textarea id="message" name="message" rows="4" cols="50"></textarea>
+      <br>
+      <label for="password">Mot de passe :</label>
+      <input type="password" id="password" name="password" required>
+      <br>
+      <button type="submit">Mettre à jour</button>
+    </form>
+    <p id="status" style="color: green; display: none;">Message mis à jour avec succès !</p>
+  </div>
+  <script>
+    document.getElementById('admin-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const message = document.getElementById('message').value;
+      const password = document.getElementById('password').value;
+
+      // Vérification du mot de passe (simple pour l'exemple)
+      if (password === 'admin123') { // Remplacez par un mot de passe sécurisé
+        if (message.trim() === '') {
+          localStorage.removeItem('announcementMessage'); // Supprimer le message si le champ est vide
+          document.getElementById('status').textContent = 'Le bandeau a été supprimé.';
+        } else {
+          localStorage.setItem('announcementMessage', message);
+          document.getElementById('status').textContent = 'Message mis à jour avec succès !';
+        }
+        document.getElementById('status').style.display = 'block';
+      } else {
+        alert('Mot de passe incorrect !');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IMMAT&CO - Accueil</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo">IMMAT&CO</h1>
+      <div class="burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="horaires.html">Horaires</a></li>
+          <li><a href="documents.html">Documents</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>Bienvenue chez IMMAT&CO</h2>
+        <p>Votre partenaire de confiance pour toutes vos démarches d’immatriculation de véhicules.</p>
+    </section>
+     <section class="documents">
+      <div class="container">
+        <h2>Changement d'adresse</h2>
+        <p>Pour effectuer un changement d'adresse, vous devez fournir les documents suivants:</p>
+        <ul>
+          <li>Justificatif de domicile de moins de 6 mois</li>
+          <li>Pièce d'identité valide</li>
+          <li>Mandat <button onclick="window.open('documents/cerfa_13757-03.pdf', '_blank')">Imprimer</button></li>
+          <li>Demande de certificat d'immatriculation d'un véhicule<button onclick="window.open('documents/cerfa_13750-07.pdf', '_blank')">Imprimer</button></li>
+        </ul>
+      </div>
+    </section>
+      </div>
+      <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Adresse</h3>
+        <p>
+          <a href="https://www.google.com/search?q=immat%26co+st+palais" target="_blank" style="text-decoration: underline; color: inherit;">
+            ZA Lehena<br>64120 Amendeuix-Oneix, France
+            <img src="images/map-icon.png" alt="Carte" style="width: 24px; height: 24px; margin-left: 5px; vertical-align: middle;">
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p>
+          <a href="https://www.google.com/search?q=immat%26co+st+palais" target="_blank" style="text-decoration: underline; color: inherit;">
+            Tél : 06 47 59 91 47<br>Email : immat.saintpalais@gmail.com
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>© <span id="current-year"></span> - <span class="immat-name">IMMAT&CO</span> - Tous droits réservés</p>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
