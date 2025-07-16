@@ -1,0 +1,42 @@
+# Node.js
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# PHPStorm
+.idea/
+
+# Environment variables
+.env
+
+# Cache
+.cache/
+
+# Temporary files
+*.tmp
+*.swp
+
+# Composer
+vendor/
+
+# Local server files
+*.local
+
+# Backup files
+*.bak
+*.old
+
+# Ignore compiled files
+*.class
+*.pyc
+*.pyo
+
+# Ignore IDE specific files
+.vscode/
