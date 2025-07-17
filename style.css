@@ -66,9 +66,10 @@ footer {
 
 .services .container {
   display: grid;
-  grid-template-columns: 2fr 1fr; /* La colonne texte est plus large que l'image */
-  gap: 40px; /* Augmenter l'espacement entre les colonnes */
-  align-items: center; /* Aligner verticalement les éléments */
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  align-items: center;
+  justify-items: center; /* Centre les éléments horizontalement dans la grille */
 }
 
 .services .container div {
@@ -503,281 +504,23 @@ button:active, .btn:active {
   background-color: #0056b3;
 }
 
-/* Harmonisation des styles pour le menu burger */
-.burger {
-  display: flex !important;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 21px;
-  cursor: pointer;
-  position: relative;
-  z-index: 10;
-}
-
-.burger span {
-  display: block !important;
-  height: 3px;
-  width: 100%;
-  background-color: white !important;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-#nav-menu {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 70%;
-  height: 100%;
-  background-color: #1d3557;
-  transition: right 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-#nav-menu.active {
-  right: 0;
-}
-
-#nav-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-#nav-menu li {
-  margin: 15px 0;
-}
-
-#nav-menu a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-@media (min-width: 768px) {
-  .burger {
-    display: none;
-  }
-
-  #nav-menu {
-    position: static;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: transparent;
-    width: auto;
-    height: auto;
-  }
-
-  #nav-menu ul {
-    display: flex;
-    gap: 20px;
-  }
-
-  #nav-menu li {
-    margin: 0;
-  }
-
-  #nav-menu a {
-    font-size: 1rem;
-  }
-}
-
-/* Responsivité */
+/* Styles responsifs pour la section Services */
 @media (max-width: 768px) {
-  .burger {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    cursor: pointer;
-    position: relative;
-    z-index: 10;
-  }
-
-  .burger span {
-    display: block;
-    height: 3px;
-    width: 100%;
-    background-color: white !important;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-  }
-
-  #nav-menu {
-    position: fixed;
-    top: 0;
-    right: -100%; /* Masquer le menu par défaut */
-    width: 70%;
-    height: 100%;
-    background-color: #1d3557;
-    transition: right 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000; /* Assurer que le menu est au-dessus des autres éléments */
-  }
-
-  #nav-menu.active {
-    right: 0; /* Afficher le menu lorsqu'il est actif */
-  }
-
-  #nav-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  #nav-menu li {
-    margin: 15px 0;
-  }
-
-  #nav-menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-
-  .hero {
-    margin-top: 0; /* Supprime le margin-top ajouté précédemment */
-    padding: 10px 5px; /* Réduction supplémentaire du padding pour diminuer encore la hauteur */
-  }
-
-  .hero h2 {
-    font-size: 1.5rem; /* Réduction supplémentaire de la taille du texte */
-    margin-bottom: 3px; /* Réduction de l'espacement sous le titre */
-  }
-
-  .hero p {
-    font-size: 0.9rem; /* Réduction supplémentaire de la taille du paragraphe */
-    margin-bottom: 5px; /* Réduction de l'espacement sous le paragraphe */
-  }
-
   .services .container {
-    grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-    text-align: center; /* Centrer le contenu */
+    grid-template-columns: 1fr;
+    justify-items: center;
   }
-
-  .services .container div {
-    padding: 10px; /* Réduire l'espacement interne */
+  
+  .services .image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 20px 0;
   }
-
+  
   .services .image img {
     max-width: 100%;
     height: auto;
-    display: block;
-    margin: 0 auto;
-  }
-
-  .services h2 {
-    margin: 0 auto; /* Centrer le titre horizontalement */
-    text-align: center; /* Centrer le texte */
-    display: block; /* Assurer que le titre est un bloc */
-  }
-
-  .services .container h2 {
-    text-align: center !important; /* Forcer le centrage en mobile */
-  }
-
-  footer {
-    padding: 5px 2px; /* Réduction maximale du padding pour minimiser la hauteur */
-  }
-
-  .footer-container {
-    flex-direction: column; /* Aligner les colonnes verticalement */
-    gap: 5px; /* Espacement minimal entre les colonnes */
-  }
-
-  .footer-col {
-    min-width: auto; /* Supprimer la largeur minimale pour un meilleur ajustement */
-    margin: 2px 0; /* Réduction maximale des marges */
-  }
-
-  .footer-col h3 {
-    font-size: 1rem; /* Réduction maximale de la taille des titres */
-    margin-bottom: 3px; /* Réduction de l'espacement sous les titres */
-  }
-
-  .footer-col p {
-    font-size: 0.8rem; /* Réduction maximale de la taille du texte */
-    line-height: 1.2; /* Ajustement de la hauteur de ligne pour compacité */
   }
 }
 
-@media (min-width: 769px) {
-  #nav-menu {
-    display: flex !important; /* Assure que le menu est visible */
-    position: static; /* Supprime la position relative ou absolue */
-    flex-direction: row; /* Aligne les éléments horizontalement */
-    background-color: transparent; /* Supprime le fond pour le desktop */
-    width: auto; /* Ajuste la largeur pour le desktop */
-    max-height: none; /* Supprime la limite de hauteur */
-    opacity: 1; /* Assure la visibilité */
-    transform: none; /* Supprime les transformations */
-  }
-
-  nav ul {
-    display: flex; /* Assure que les éléments sont alignés horizontalement */
-    margin: 0;
-    padding: 0;
-  }
-
-  nav li {
-    margin: 0 15px; /* Espacement entre les éléments */
-  }
-
-  .services .container {
-    display: flex; /* Utilisation de flexbox pour aligner les éléments */
-    flex-direction: column; /* Aligner les éléments verticalement */
-    align-items: center; /* Centre horizontalement tous les éléments */
-  }
-
-  .services .btn {
-    align-self: center; /* Centre le bouton dans le conteneur global */
-    margin: 20px 0; /* Ajoute un espacement vertical */
-  }
-
-  .services .image img {
-    max-width: 70%; /* Réduit la taille de l'image à 70% de la largeur */
-    height: auto; /* Maintient les proportions */
-  }
-
-  /* Masquer le menu burger en mode desktop */
-  @media (min-width: 769px) {
-    .burger {
-      display: none !important;
-    }
-  }
-
-  /* Harmonisation du footer en mode desktop */
-  @media (min-width: 768px) {
-    .footer-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-
-    .footer-col:last-child {
-      flex-basis: 100%;
-      text-align: center;
-      margin-top: 20px;
-    }
-  }
-}
-
-/* Correction pour le menu burger en mode mobile */
-@media (max-width: 768px) {
-  .burger {
-    display: flex !important;
-  }
-}
