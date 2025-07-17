@@ -577,6 +577,13 @@ button:active, .btn:active {
   white-space: nowrap;
 }
 
+.container .button-group {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
 @media (max-width: 768px) {
   .footer-container {
     align-items: center;
