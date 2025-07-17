@@ -533,8 +533,18 @@ button:active, .btn:active {
     margin-bottom: 20px;
   }
 
-  .footer-col:nth-child(2) {
-    order: 3; /* Place le copyright en dernier en mode mobile */
+  /* Réorganisation de l'ordre des colonnes en mobile */
+  .footer-col:nth-child(2) { /* Colonne du copyright */
+    order: 3; /* La déplace en dernier */
+    margin-top: 20px; /* Ajoute de l'espace au-dessus */
+  }
+
+  .footer-col:first-child {
+    order: 1;
+  }
+
+  .footer-col:last-child {
+    order: 2;
   }
 }
 
