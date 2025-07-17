@@ -522,5 +522,65 @@ button:active, .btn:active {
     max-width: 100%;
     height: auto;
   }
+  
+  .footer-container {
+    flex-direction: column;
+  }
+  
+  .footer-col {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .footer-col:nth-child(2) {
+    order: 3; /* Place le copyright en dernier en mode mobile */
+  }
+}
+
+/* Styles pour le footer */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /* Aligne les colonnes en bas */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 60px;
+}
+
+.footer-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Aligne le contenu de chaque colonne en bas */
+}
+
+/* Ajustement pour que les titres restent en haut */
+.footer-col h3 {
+  margin-bottom: auto; /* Pousse le contenu vers le bas */
+}
+
+/* Assure que tous les paragraphes du footer ont la même marge en bas */
+.footer-col p {
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .footer-col {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .footer-col p {
+    white-space: normal;
+  }
 }
 
