@@ -5,6 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IMMAT&CO - Accueil</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .return-button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      text-align: center;
+    }
+    .return-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -40,17 +57,19 @@
           <li>Mandat<button onclick="window.open('documents/cerfa_13757-03.pdf', '_blank')">Imprimer</button></li>
           <li>Formulaire de demande d'immatriculation<button onclick="window.open('documents/cerfa_13750-07.pdf', '_blank')">Imprimer</button></li>
           <li>Carte grise du véhicule</li>
-          <li>Certificat de conformité</li>
           <li>Justificatif de domicile de moins de 6 mois</li>
           <li>Pièce d'identité</li>
           <li>Attestation d'assurance</li>
           <li>Permis de conduire</li>
           <li>Contrôle technique de moins de 6 mois</li>
-          <li>Photos du véhicule<button onclick="window.open('documents/liste-photos-collection.pdf', '_blank')">consulter</button></li>
+          <li>Attestation FFVE<button onclick="window.open('documents/liste-photos-collection.pdf', '_blank')">consulter</button></li>
         </ul>
       </div>
     </section>
   </main>
+  <div class="container">
+    <button class="return-button" onclick="window.history.back()">Retour</button>
+  </div>
   <footer>
     <div class="footer-container">
       <div class="footer-col">

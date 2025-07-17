@@ -5,6 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IMMAT&CO - Contact</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .return-button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      text-align: center;
+    }
+    .return-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -35,21 +52,24 @@
     <section class="contact-form">
       <div class="container">
         <h2>Formulaire de contact</h2>
-        <form action="send_email.php" method="POST">
+        <form action="send_email.php" method="POST" aria-label="Formulaire de contact">
           <label for="name">Nom :</label>
-          <input type="text" id="name" name="name" required>
+          <input type="text" id="name" name="name" required aria-required="true">
 
           <label for="email">Email :</label>
-          <input type="email" id="email" name="email" required>
+          <input type="email" id="email" name="email" required aria-required="true">
 
           <label for="subject">Sujet :</label>
-          <input type="text" id="subject" name="subject" required>
+          <input type="text" id="subject" name="subject" required aria-required="true">
 
           <label for="message">Message :</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
+          <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
 
-          <button type="submit">Envoyer</button>
+          <button type="submit" aria-label="Envoyer le formulaire">Envoyer</button>
         </form>
+        <div class="container">
+          <button class="return-button" onclick="window.history.back()">Retour</button>
+        </div>
       </div>
     </section>
   </main>

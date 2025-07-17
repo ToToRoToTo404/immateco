@@ -3,25 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IMMAT&CO - Accueil</title>
+  <title>IMMAT&CO - Changement de Titulaire</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    .return-button {
-      display: block;
-      margin: 20px auto;
-      padding: 10px 20px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      text-align: center;
-    }
-    .return-button:hover {
-      background-color: #0056b3;
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -37,7 +20,7 @@
           <li><a href="index.html">Accueil</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="horaires.html">Horaires</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="documents.html">Documents</a></li>
         </ul>
       </nav>
     </div>
@@ -50,20 +33,24 @@
       </div>
     </section>
     <section class="documents">
+      <h2>Changement de Titulaire</h2>
+      <p>Pour effectuer un changement de titulaire de carte grise, vous devez fournir les documents suivants :</p>
+      <ul>
+        <li>Ancienne carte grise barrée, datée et signée par l'ancien titulaire</li>
+        <li>Certificat de cession (original)</li>
+        <li>Mandat <button onclick="window.open('documents/cerfa_13757-03.pdf', '_blank')">Imprimer</button></li>
+        <li>Demande de certificat d'immatriculation d'un véhicule<button onclick="window.open('documents/cerfa_13750-07.pdf', '_blank')">Imprimer</button></li>
+        <li>Pièces d'identité valides</li>
+        <li>Justificatif de domicile de moins de 6 mois (Kbis et tampon pour les entreprises)</li>
+        <li>Permis de conduire correspondant à la catégorie du véhicule</li>
+        <li>Contrôle technique de moins de 6 mois (si véhicule de plus de 4 ans)</li>
+        <li>Attestation d'assurance en cours de validité</li>
+      </ul>
       <div class="container">
-        <h2>Demande de fiche d'identification</h2>
-        <p>Pour demander une fiche d'identification, vous devez fournir les documents suivants:</p>
-        <ul>
-          <li>Numéro d'immatriculation</li>
-          <li>Pièce d'identité</li>
-        </ul>
+        <button class="return-button" onclick="window.history.back()">Retour</button>
       </div>
     </section>
-    <div class="container">
-      <button class="return-button" onclick="window.history.back()">Retour</button>
-    </div>
-  </main>
-  <footer>
+    <footer>
     <div class="footer-container">
       <div class="footer-col">
         <h3>Adresse</h3>
