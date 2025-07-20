@@ -35,20 +35,37 @@
     <section class="contact-form">
       <div class="container">
         <h2>Formulaire de contact</h2>
-        <form action="send_email.php" method="POST" aria-label="Formulaire de contact">
-          <label for="name">Nom :</label>
+        <form id="contactForm" method="POST" aria-label="Formulaire de contact">
+          <div class="form-status" role="alert" aria-live="polite"></div>
+          
+          <label for="name">Nom* :</label>
           <input type="text" id="name" name="name" required aria-required="true">
 
-          <label for="email">Email :</label>
+          <label for="email">Email* :</label>
           <input type="email" id="email" name="email" required aria-required="true">
 
-          <label for="subject">Sujet :</label>
+          <label for="subject">Sujet* :</label>
           <input type="text" id="subject" name="subject" required aria-required="true">
 
-          <label for="message">Message :</label>
+          <label for="message">Message* :</label>
           <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
 
-          <button type="submit" aria-label="Envoyer le formulaire">Envoyer</button>
+          <!-- Honeypot -->
+          <div class="hidden-field">
+            <input type="text" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <!-- CSRF Token -->
+          <input type="hidden" name="csrf_token" id="csrf_token" value="">
+
+          <button type="submit" class="submit-button" aria-label="Envoyer le formulaire">
+            <span class="button-text">Envoyer</span>
+            <span class="button-loader" style="display: none;">
+              <svg class="spinner" viewBox="0 0 50 50">
+                <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+              </svg>
+            </span>
+          </button>
         </form>
         <div class="button-group">
           <button class="return-button" onclick="window.history.back()">Retour</button>
@@ -59,5 +76,6 @@
   <footer></footer>
   <script src="js/loadComponents.js"></script>
   <script src="script.js"></script>
+  <script src="js/contact.js"></script>
 </body>
 </html>

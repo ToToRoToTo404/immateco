@@ -1,0 +1,1 @@
+[2025-07-20 21:02:59] [ERROR] Échec de l'envoi de l'email
