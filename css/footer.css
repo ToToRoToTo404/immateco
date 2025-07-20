@@ -1,6 +1,6 @@
 /* Styles pour le footer */
 footer {
-  background-color: #1d3557;
+  background-color: #354F52;
   color: white;
   padding: 20px 0;
   text-align: center;
@@ -25,6 +25,7 @@ footer {
 .footer-col h3 {
   font-size: 1.5rem;
   margin-bottom: 10px;
+  color: #84A98C;
 }
 
 .footer-col p {

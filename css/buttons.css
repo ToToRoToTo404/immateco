@@ -3,7 +3,7 @@
   display: block;
   margin: 20px auto;
   padding: 10px 20px;
-  background-color: #007BFF;
+  background-color: #52796F;
   color: white;
   border: none;
   border-radius: 5px;
@@ -13,5 +13,5 @@
 }
 
 .return-button:hover {
-  background-color: #0056b3;
+  background-color: #3a574f;
 }
