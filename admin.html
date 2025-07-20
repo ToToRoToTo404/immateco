@@ -13,38 +13,100 @@
   <div class="admin-container">
     <h1>Administration - Bandeau d'annonce</h1>
     <form id="admin-form">
+      <div class="form-preview">
+        <h2>Aperçu de l'annonce actuelle</h2>
+        <div id="announcement-preview"></div>
+      </div>
       <label for="message">Message du bandeau :</label>
-      <textarea id="message" name="message" rows="4" cols="50"></textarea>
+      <textarea id="message" name="message" rows="4" cols="50" placeholder="Laissez vide pour supprimer l'annonce"></textarea>
       <br>
       <label for="password">Mot de passe :</label>
       <input type="password" id="password" name="password" required>
       <br>
-      <button type="submit">Mettre à jour</button>
+      <div class="button-group">
+        <button type="submit" class="primary-button">Mettre à jour</button>
+        <button type="button" id="preview-button" class="secondary-button">Aperçu</button>
+      </div>
     </form>
-    <p id="status" style="color: green; display: none;">Message mis à jour avec succès !</p>
+    <p id="status" class="status-message"></p>
   </div>
   <footer></footer>
   <script src="js/loadComponents.js"></script>
   <script src="script.js"></script>
   <script>
-    document.getElementById('admin-form').addEventListener('submit', function(event) {
-      event.preventDefault();
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('admin-form');
+      const messageInput = document.getElementById('message');
+      const previewButton = document.getElementById('preview-button');
+      const previewDiv = document.getElementById('announcement-preview');
+      const statusMessage = document.getElementById('status');
 
-      const message = document.getElementById('message').value;
-      const password = document.getElementById('password').value;
+      // Charger le message actuel s'il existe
+      const currentMessage = localStorage.getItem('announcementMessage');
+      if (currentMessage) {
+        messageInput.value = currentMessage;
+        previewDiv.innerHTML = `<div class="announcement">${currentMessage}</div>`;
+      }
 
-      // Vérification du mot de passe (simple pour l'exemple)
-      if (password === 'admin123') { // Remplacez par un mot de passe sécurisé
-        if (message.trim() === '') {
-          localStorage.removeItem('announcementMessage'); // Supprimer le message si le champ est vide
-          document.getElementById('status').textContent = 'Le bandeau a été supprimé.';
+      // Gestion de l'aperçu
+      previewButton.addEventListener('click', function() {
+        const message = messageInput.value.trim();
+        if (message) {
+          previewDiv.innerHTML = `<div class="announcement">${message}</div>`;
         } else {
-          localStorage.setItem('announcementMessage', message);
-          document.getElementById('status').textContent = 'Message mis à jour avec succès !';
+          previewDiv.innerHTML = '<p class="no-preview">Aucune annonce à afficher</p>';
         }
-        document.getElementById('status').style.display = 'block';
-      } else {
-        alert('Mot de passe incorrect !');
+      });
+
+      // Gestion du formulaire
+      form.addEventListener('submit', async function(event) {
+        event.preventDefault();
+        
+        const message = messageInput.value.trim();
+        const password = document.getElementById('password').value;
+
+        try {
+          // Dans un environnement réel, ceci devrait être vérifié côté serveur
+          if (password !== 'admin123') { // À remplacer par une vraie authentification
+            throw new Error('Mot de passe incorrect');
+          }
+
+          if (message === '') {
+            localStorage.removeItem('announcementMessage');
+            afficherStatus('Le bandeau a été supprimé', 'success');
+          } else {
+            localStorage.setItem('announcementMessage', message);
+            afficherStatus('Message mis à jour avec succès !', 'success');
+            // Rafraîchir l'aperçu
+            previewDiv.innerHTML = `<div class="announcement">${message}</div>`;
+          }
+
+          // Mettre à jour l'annonce si on est sur la page d'accueil
+          const activeAnnouncement = document.getElementById('announcement');
+          if (activeAnnouncement) {
+            if (message === '') {
+              activeAnnouncement.style.display = 'none';
+            } else {
+              afficherAnnonce(message);
+            }
+          }
+
+        } catch (error) {
+          afficherStatus(error.message, 'error');
+        }
+      });
+
+      function afficherStatus(message, type) {
+        statusMessage.textContent = message;
+        statusMessage.className = `status-message ${type}`;
+        statusMessage.style.display = 'block';
+        setTimeout(() => {
+          statusMessage.style.opacity = '0';
+          setTimeout(() => {
+            statusMessage.style.display = 'none';
+            statusMessage.style.opacity = '1';
+          }, 300);
+        }, 3000);
       }
     });
   </script>

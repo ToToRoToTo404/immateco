@@ -21,39 +21,36 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function afficherAnnonce(message) {
-  const announcement = document.getElementById('announcement');
+  let announcement = document.getElementById('announcement');
 
-  if (announcement) {
-    announcement.style.display = 'block';
-    announcement.querySelector('p').textContent = message;
-  } else {
-    // Créer le bandeau si non existant
+  if (!announcement) {
+    // Création du template HTML pour l'annonce
+    const template = `
+      <div id="announcement" class="announcement-hidden">
+        <p>${message}</p>
+      </div>
+    `;
+
+    // Insertion après la section hero
     const heroSection = document.querySelector('.hero');
     if (heroSection) {
-      const newAnnouncement = document.createElement('div');
-      newAnnouncement.id = 'announcement';
-      newAnnouncement.style.backgroundColor = '#ffcc00';
-      newAnnouncement.style.color = '#000';
-      newAnnouncement.style.padding = '10px';
-      newAnnouncement.style.textAlign = 'center';
-      newAnnouncement.style.position = 'relative';
-      newAnnouncement.innerHTML = `<p style="margin: 0; display: inline-block;">${message}</p>`;
-
-      // Ajouter un bouton pour fermer le bandeau
-      const closeButton = document.createElement('button');
-      closeButton.textContent = 'X';
-      closeButton.style.marginLeft = '10px';
-      closeButton.style.background = 'none';
-      closeButton.style.border = 'none';
-      closeButton.style.cursor = 'pointer';
-      closeButton.style.fontWeight = 'bold';
-      closeButton.addEventListener('click', () => {
-        newAnnouncement.style.display = 'none';
-      });
-
-      newAnnouncement.appendChild(closeButton);
-      heroSection.parentNode.insertBefore(newAnnouncement, heroSection.nextSibling);
+      heroSection.insertAdjacentHTML('afterend', template);
+      announcement = document.getElementById('announcement');
     }
+  } else {
+    announcement.querySelector('p').textContent = message;
+  }
+
+  if (announcement) {
+    // Sauvegarde le message dans le localStorage
+    localStorage.setItem('announcementMessage', message);
+    
+    // Affiche toujours l'annonce
+    announcement.style.display = 'block';
+    // Délai pour permettre la transition
+    setTimeout(() => {
+      announcement.classList.remove('announcement-hidden');
+    }, 10);
   }
 }
 

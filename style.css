@@ -189,10 +189,10 @@ footer {
 .demarches li {
   margin: 10px 0;
   font-size: 1.1rem;
-  background-color: #e3f2fd; /* Couleur de fond douce */
-  border: 1px solid #90caf9; /* Bordure colorée */
-  color: #0d47a1; /* Couleur du texte */
-  border-radius: 8px;
+  background:linear-gradient(45deg, #52796F, #84A98C);
+  border: none;
+  color: #ffffff; /* Couleur du texte */
+  border-radius: 12px;
   padding: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
@@ -200,9 +200,8 @@ footer {
 
 .demarches li:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-  background-color: #bbdefb; /* Couleur de fond au survol */
-  border-color: #42a5f5; /* Bordure au survol */
+  box-shadow: 0 6px 10px rgba(82, 121, 111, 0.25);
+  background: linear-gradient(45deg, #84A98C, #52796F); /* Inverse le dégradé au survol */
 }
 
 .demarches a {
@@ -235,7 +234,7 @@ footer {
 .horaires h2 {
   font-size: 2.5rem; /* Augmente la taille du titre */
   margin-bottom: 20px; /* Ajoute un espacement sous le titre */
-  color: #0d47a1; /* Couleur du texte du titre */
+  color: #52796F; /* Couleur du texte du titre */
 }
 
 .horaires-table {
@@ -275,7 +274,7 @@ footer {
 
 /* Annonce */
 #announcement {
-  background: linear-gradient(45deg, #BF953F, #FCF6BA, #B38728, #FBF5B7);
+  background: linear-gradient(45deg, #D4AF37, #FFF3B0, #BF953F, #FFE87C);
   color: #2F3E46;
   font-size: 1.2rem;
   font-weight: 600;
@@ -283,19 +282,23 @@ footer {
   padding: 12px 25px;
   margin: 20px auto;
   max-width: 800px;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(191, 149, 63, 0.3);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
   display: none;
-  border: 1px solid rgba(191, 149, 63, 0.3);
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(191, 149, 63, 0.2);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
+  animation: goldShine 3s infinite linear;
 }
 
-@keyframes shine {
-  from {
-    transform: translateX(-100%) rotate(30deg);
+@keyframes goldShine {
+  0% {
+    background-position: 0% 50%;
   }
-  to {
-    transform: translateX(100%) rotate(30deg);
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
@@ -312,7 +315,7 @@ footer {
 
 .documents h2 {
   font-size: 2rem; /* Taille de police agrandie pour le titre */
-  color: #0d47a1; /* Couleur du texte */
+  color: #52796F; /* Couleur du texte */
   text-align: center; /* Centrer le titre */
   margin-bottom: 20px; /* Espacement sous le titre */
 }
@@ -341,7 +344,7 @@ footer {
 
 .documents ul li button {
   padding: 5px 10px; /* Taille du bouton */
-  background-color: #0d47a1; /* Couleur de fond */
+  background: linear-gradient(45deg, #52796F, #84A98C); /* Couleur de fond */
   color: #fff; /* Couleur du texte */
   border: none; /* Suppression des bordures */
   border-radius: 5px; /* Coins arrondis */
@@ -365,7 +368,7 @@ footer {
 
 .contact-form h2 {
   font-size: 2rem; /* Taille de police agrandie */
-  color: #0d47a1; /* Couleur du texte */
+  color: #52796F; /* Couleur du texte */
   text-align: center; /* Centrer le titre */
   margin-bottom: 20px; /* Espacement sous le titre */
 }
@@ -390,27 +393,30 @@ footer {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #0d47a1; /* Couleur de bordure au focus */
+  border-color: #52796F; /* Couleur de bordure au focus */
   outline: none; /* Supprime le contour par défaut */
-  box-shadow: 0 0 5px rgba(13, 71, 161, 0.5); /* Effet lumineux au focus */
+  box-shadow: 0 0 5px rgba(82, 121, 111, 0.5); /* Effet lumineux au focus avec la couleur principale */
 }
 
 .contact-form button {
   display: block; /* Bouton centré */
   width: 100%; /* Prend toute la largeur */
-  padding: 10px; /* Espacement interne */
-  background-color: #0d47a1; /* Couleur de fond */
+  padding: 12px; /* Espacement interne légèrement augmenté */
+  background: linear-gradient(45deg, #52796F, #84A98C); /* Dégradé cohérent */
   color: #fff; /* Couleur du texte */
   border: none; /* Supprime les bordures */
-  border-radius: 5px; /* Coins arrondis */
+  border-radius: 8px; /* Coins arrondis */
   font-size: 1.2rem; /* Taille de police */
   font-weight: bold; /* Texte en gras */
   cursor: pointer; /* Curseur pointer */
-  transition: background-color 0.3s, transform 0.2s; /* Transition fluide */
+  transition: all 0.3s ease; /* Transition fluide */
+  box-shadow: 0 2px 4px rgba(82, 121, 111, 0.2);
 }
 
 .contact-form button:hover {
-  background-color: #1565c0; /* Couleur au survol */
+  background: linear-gradient(45deg, #84A98C, #52796F); /* Inverse le dégradé au survol */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(82, 121, 111, 0.3);
 }
 
 .contact-form button:active {
@@ -463,33 +469,107 @@ form button:hover {
   background-color: #0056b3;
 }
 
-#status {
-  text-align: center;
-  font-size: 0.9em;
-  margin-top: 10px;
+.form-preview {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f5f5f5;
+  border-radius: 8px;
 }
 
-#error {
+.form-preview h2 {
+  font-size: 1.2rem;
+  color: #52796F;
+  margin-bottom: 15px;
+}
+
+#announcement-preview {
+  min-height: 50px;
+  margin: 10px 0;
+}
+
+#announcement-preview .announcement {
+  background: linear-gradient(45deg, #D4AF37, #FFF3B0, #BF953F, #FFE87C);
+  color: #2F3E46;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.no-preview {
+  color: #666;
+  font-style: italic;
+  text-align: center;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.primary-button, .secondary-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.primary-button {
+  background: linear-gradient(45deg, #52796F, #84A98C);
+  color: white;
+  flex: 2;
+}
+
+.secondary-button {
+  background: #f0f0f0;
+  color: #52796F;
+  flex: 1;
+}
+
+.primary-button:hover, .secondary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.status-message {
   text-align: center;
   font-size: 0.9em;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 4px;
+  transition: opacity 0.3s ease;
+}
+
+.status-message.success {
+  background-color: #dff0d8;
+  color: #3c763d;
+  border: 1px solid #d6e9c6;
+}
+
+.status-message.error {
+  background-color: #f2dede;
+  color: #a94442;
+  border: 1px solid #ebccd1;
 }
 
 /* Effets hover pour les liens */
 nav a:hover {
-  color: #00b4d8; /* Changement de couleur au survol */
+  color: #52796F; /* Changement de couleur au survol */
   text-decoration: underline; /* Ajout d'un soulignement */
 }
 
 /* Effets hover pour les boutons */
 button:hover, .btn:hover {
-  background-color: #00b4d8; /* Couleur de fond au survol */
+  background: linear-gradient(45deg, #84A98C, #52796F); /* Inverse le dégradé au survol */
   transform: scale(1.05); /* Légère mise en avant */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ombre plus marquée */
+  box-shadow: 0 4px 6px rgba(82, 121, 111, 0.3); /* Ombre plus marquée avec la couleur principale */
 }
 
 /* Effets actifs pour les liens */
 nav a:active {
-  color: #00b4d8; /* Changement de couleur au clic */
+  color: #84A98C; /* Changement de couleur au clic */
   text-decoration: underline; /* Ajout d'un soulignement */
 }
 
@@ -509,37 +589,42 @@ button:active, .btn:active {
 
 .back-button a {
   display: inline-block;
-  color: #007BFF;
+  color: #ffffff;
   text-decoration: none;
   font-size: 1em;
   font-weight: bold;
-  padding: 5px 10px;
-  border: 1px solid #007BFF;
-  border-radius: 4px;
-  transition: background-color 0.3s, color 0.3s;
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #52796F, #84A98C);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .back-button a:hover {
-  background-color: #007BFF;
-  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Bouton retour global */
 .return-button {
   display: block;
   margin: 20px auto;
-  padding: 10px 20px;
-  background-color: #007BFF;
+  padding: 12px 25px;
+  background: linear-gradient(45deg, #52796F, #84A98C);
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
   text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .return-button:hover {
-  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Styles responsifs pour la section Services */
