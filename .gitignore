@@ -40,3 +40,22 @@ vendor/
 
 # Ignore IDE specific files
 .vscode/
+
+# Netlify (si tu utilises netlify-cli ou déploiement local)
+.netlify/
+
+# Render config (si présent)
+render.yaml
+
+# Builds front-end
+dist/
+build/
+
+# Tests éventuels
+coverage/
+*.test.js
+*.spec.js
+
+# Environnements multiples
+.env.local
+.env.production
