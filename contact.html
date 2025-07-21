@@ -35,7 +35,7 @@
     <section class="contact-form">
       <div class="container">
         <h2>Formulaire de contact</h2>
-        <form id="contactForm" method="POST" aria-label="Formulaire de contact">
+        <form id="contactForm" method="POST" aria-label="Formulaire de contact" novalidate>
           <div class="form-status" role="alert" aria-live="polite"></div>
           
           <label for="name">Nom* :</label>
@@ -77,5 +77,18 @@
   <script src="js/loadComponents.js"></script>
   <script src="script.js"></script>
   <script src="js/contact.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const formStatus = document.querySelector('.form-status');
+    if (formStatus) {
+      formStatus.textContent = '✅ Le formulaire est prêt à être utilisé !';
+      formStatus.className = 'form-status success';
+      formStatus.style.display = 'block';
+    } else {
+      console.warn('⚠️ Élément .form-status introuvable.');
+    }
+  });
+</script>
+
 </body>
 </html>

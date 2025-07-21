@@ -1,5 +1,5 @@
 // Configuration de l'URL de base pour l'API
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = 'http://immateco-saintpalais.com';
 
 document.addEventListener('DOMContentLoaded', async () => {
     const contactForm = document.getElementById('contactForm');
