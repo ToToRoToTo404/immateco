@@ -1,5 +1,5 @@
 // Configuration de l'URL de base pour l'API
-const API_BASE_URL = 'http://immateco-saintpalais.com';
+const API_BASE_URL = 'https://immateco-back.onrender.com';
 
 document.addEventListener('DOMContentLoaded', async () => {
     const contactForm = document.getElementById('contactForm');
