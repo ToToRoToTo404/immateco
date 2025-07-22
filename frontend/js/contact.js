@@ -3,9 +3,10 @@ const API_BASE_URL = 'https://immateco-back.onrender.com';
 
 document.addEventListener('DOMContentLoaded', async () => {
     const contactForm = document.getElementById('contactForm');
+    if (!contactForm) return;
     const submitButton = contactForm.querySelector('.submit-button');
-    const buttonText = submitButton.querySelector('.button-text');
-    const buttonLoader = submitButton.querySelector('.button-loader');
+    const buttonText = submitButton ? submitButton.querySelector('.button-text') : null;
+    const buttonLoader = submitButton ? submitButton.querySelector('.button-loader') : null;
     const formStatus = contactForm.querySelector('.form-status');
 
     // Récupération du token CSRF au chargement
@@ -22,6 +23,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             throw new Error('Token CSRF manquant dans la réponse');
         }
         document.getElementById('csrf_token').value = data.csrf_token;
+        if (formStatus) {
+            showStatus('Erreur lors du chargement du formulaire : impossible de contacter le serveur. Vérifiez votre connexion ou réessayez plus tard.', 'error');
+        }
     } catch (error) {
         console.error('Erreur lors de la récupération du token CSRF:', error);
         showStatus('Erreur lors du chargement du formulaire: ' + error.message, 'error');
@@ -31,9 +35,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         submitButton.disabled = isLoading;
         buttonText.style.display = isLoading ? 'none' : 'inline';
         buttonLoader.style.display = isLoading ? 'inline' : 'none';
+        if (submitButton) submitButton.disabled = isLoading;
+        if (buttonText) buttonText.style.display = isLoading ? 'none' : 'inline';
+        if (buttonLoader) buttonLoader.style.display = isLoading ? 'inline' : 'none';
     }
 
     function showStatus(message, type) {
+        formStatus.textContent = message;
+        formStatus.className = `form-status ${type}`;
+        formStatus.style.display = 'block';
+        if (!formStatus) return;
         formStatus.textContent = message;
         formStatus.className = `form-status ${type}`;
         formStatus.style.display = 'block';
@@ -84,6 +95,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         } catch (error) {
             showStatus('Une erreur inattendue s\'est produite. Veuillez réessayer.', 'error');
+            showStatus('Une erreur inattendue s\'est produite. Vérifiez votre connexion ou que le serveur est accessible, puis réessayez.', 'error');
         } finally {
             setLoadingState(false);
         }

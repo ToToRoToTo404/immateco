@@ -1,4 +1,6 @@
 <?php
+// Autoriser le CORS pour le domaine du frontend
+header("Access-Control-Allow-Origin: https://immateco-saintpalais.com");
 // Démarrer la session (nécessaire pour stocker le token)
 session_start();
 

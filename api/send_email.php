@@ -1,6 +1,6 @@
 <?php
 // Autoriser les requêtes CORS
-header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Origin: https://immateco-saintpalais.com');
 header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 
