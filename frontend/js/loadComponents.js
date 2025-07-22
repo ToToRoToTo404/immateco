@@ -17,7 +17,8 @@ async function loadComponent(elementName, filePath) {
     }
 }
 
-// Charger le footer sur toutes les pages
+// Charger les composants sur toutes les pages
 document.addEventListener('DOMContentLoaded', () => {
-    loadComponent('footer', '/components/footer.html');
+    loadComponent('nav#nav-menu', 'components/navigation.html');
+    loadComponent('footer', 'components/footer.html');
 });
