@@ -1,8 +1,11 @@
-<?php
-// 🔐 CORS – à placer impérativement tout en haut
-header("Access-Control-Allow-Origin: https://immateco-saintpalais.com");
-header("Access-Control-Allow-Methods: POST, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type");
+
+$allowed_origins = [
+  'https://immateco-saintpalais.com',
+  'http://127.0.0.1:5500'
+];
+if (isset($_SERVER['HTTP_ORIGIN']) && in_array($_SERVER['HTTP_ORIGIN'], $allowed_origins)) {
+  header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
+}
 
 // 🔁 Réponse aux requêtes OPTIONS (préflight)
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {

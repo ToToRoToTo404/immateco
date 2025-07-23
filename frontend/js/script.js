@@ -1,5 +1,14 @@
-// ✅ URL du backend
-const API_BASE_URL = 'https://immateco-back.onrender.com';
+// Menu burger responsive
+document.addEventListener("DOMContentLoaded", () => {
+    const burger = document.getElementById("burger");
+    const navMenu = document.getElementById("nav-menu");
+    if (burger && navMenu) {
+        burger.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+        });
+    }
+});
+
 
 document.addEventListener('DOMContentLoaded', async () => {
     const contactForm = document.getElementById('contactForm');
