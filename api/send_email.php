@@ -1,4 +1,4 @@
-
+<?php
 $allowed_origins = [
   'https://immateco-saintpalais.com',
   'http://127.0.0.1:5500'

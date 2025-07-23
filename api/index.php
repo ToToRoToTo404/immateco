@@ -1,10 +1,4 @@
-$allowed_origins = [
-  'https://immateco-saintpalais.com',
-  'http://127.0.0.1:5500'
-];
-if (isset($_SERVER['HTTP_ORIGIN']) && in_array($_SERVER['HTTP_ORIGIN'], $allowed_origins)) {
-  header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
-}
+<?php
 $allowed_origins = [
   'https://immateco-saintpalais.com',
   'http://127.0.0.1:5500'
