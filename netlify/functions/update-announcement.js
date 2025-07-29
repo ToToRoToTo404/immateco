@@ -1,6 +1,6 @@
 // Fonction pour mettre à jour l'annonce
-const fs = require('fs');
-const path = require('path');
+// Note: Netlify Functions ne peut pas écrire de fichiers, on retourne juste un succès
+// Le stockage réel se fait via localStorage côté client
 
 exports.handler = async (event, context) => {
   // Configuration CORS
@@ -36,34 +36,15 @@ exports.handler = async (event, context) => {
         };
       }
 
-      // Sauvegarder dans le fichier JSON
-      const dataPath = path.join(process.cwd(), 'frontend', 'data', 'announcement.json');
-      const announcementData = {
-        message: message || '',
-        lastUpdated: new Date().toISOString()
-      };
-
-      try {
-        // Créer le dossier data s'il n'existe pas
-        const dataDir = path.dirname(dataPath);
-        if (!fs.existsSync(dataDir)) {
-          fs.mkdirSync(dataDir, { recursive: true });
-        }
-
-        // Écrire le fichier
-        fs.writeFileSync(dataPath, JSON.stringify(announcementData, null, 2));
-      } catch (fileError) {
-        console.error('Erreur lors de l\'écriture du fichier:', fileError);
-        throw new Error('Impossible de sauvegarder l\'annonce');
-      }
-      
+      // Pour Netlify Functions, on ne peut pas écrire de fichiers
+      // On retourne juste un succès et le stockage se fait côté client
       return {
         statusCode: 200,
         headers,
         body: JSON.stringify({
           success: true,
           message: message || '',
-          info: 'Annonce mise à jour avec succès !'
+          info: 'Annonce mise à jour avec succès ! (stockage localStorage)'
         })
       };
     } catch (error) {
@@ -72,7 +53,7 @@ exports.handler = async (event, context) => {
         headers,
         body: JSON.stringify({
           success: false,
-          error: error.message || 'Données invalides'
+          error: 'Données invalides'
         })
       };
     }

@@ -1,6 +1,5 @@
 // Fonction pour récupérer l'annonce actuelle
-const fs = require('fs');
-const path = require('path');
+// Note: Pour l'instant, on utilise le fichier JSON statique car Netlify Functions ne peut pas écrire
 
 exports.handler = async (event, context) => {
   // Configuration CORS
@@ -22,27 +21,16 @@ exports.handler = async (event, context) => {
 
   if (event.httpMethod === 'GET') {
     try {
-      // Lire le fichier JSON depuis le dossier frontend/data
-      const dataPath = path.join(process.cwd(), 'frontend', 'data', 'announcement.json');
-      
-      let announcementData = { message: '', lastUpdated: new Date().toISOString() };
-      
-      try {
-        if (fs.existsSync(dataPath)) {
-          const fileContent = fs.readFileSync(dataPath, 'utf8');
-          announcementData = JSON.parse(fileContent);
-        }
-      } catch (fileError) {
-        console.log('Fichier announcement.json non trouvé ou invalide, utilisation des valeurs par défaut');
-      }
-      
+      // Pour l'instant, on retourne toujours vide car on ne peut pas lire de fichiers dynamiques
+      // Le système fonctionne entièrement avec localStorage
       return {
         statusCode: 200,
         headers,
         body: JSON.stringify({
           success: true,
-          message: announcementData.message || '',
-          lastUpdated: announcementData.lastUpdated || new Date().toISOString()
+          message: '',
+          lastUpdated: new Date().toISOString(),
+          note: 'Utilise localStorage pour la persistance'
         })
       };
     } catch (error) {
