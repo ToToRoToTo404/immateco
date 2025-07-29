@@ -1,8 +1,8 @@
 /* Bloc annonce masqué par défaut, affiché par JS si besoin */
 #announcement {
   display: none;
-  background: #ffe066;
-  color: #333;
+  background: #F4D03F;
+  color: #1B4332;
   padding: 1em;
   margin: 1em 0;
   border-radius: 6px;
@@ -14,8 +14,8 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fdfdfd;
-  color: #444;
+  background-color: #F8F9FA;
+  color: #1B4332;
   display: flex;
   flex-direction: column;
 }
@@ -42,7 +42,7 @@ footer {
 
 /* Section Hero */
 .hero {
-  background: linear-gradient(to right, #6B9B7F, #8FBC8F);
+  background: linear-gradient(135deg, #1B4332, #2D6A4F, #D4AF37);
   color: white;
   text-align: center;
   padding: 40px 20px;
@@ -90,7 +90,7 @@ footer {
 .services h2 {
   font-family: 'Roboto', sans-serif; /* Police moderne et lisible */
   font-size: 2.5rem; /* Taille de police agrandie */
-  color: #6B9B7F; /* Couleur du texte éclaircie */
+  color: #1B4332; /* Couleur vert foncé */
   text-align: center; /* Centrer le titre */
   margin-bottom: 20px; /* Espacement sous le titre */
 }
@@ -145,7 +145,7 @@ footer {
   margin: 20px auto; /* Centre le bouton avec une marge automatique */
   width: fit-content; /* Ajuste la largeur au contenu */
   padding: 15px 30px; /* Espacement interne augmenté pour un meilleur confort visuel */
-  background: linear-gradient(45deg, #6B9B7F, #98D8C8); /* Dégradé moderne éclaircit */
+  background: linear-gradient(45deg, #2D6A4F, #D4AF37); /* Dégradé vert-doré */
   color: #ffffff; /* Couleur du texte */
   font-size: 1.3rem; /* Taille de police légèrement agrandie */
   font-weight: bold; /* Texte en gras */
@@ -159,7 +159,7 @@ footer {
 
 /* Ajout d'un effet visuel pour les appareils mobiles en utilisant :active pour simuler le hover */
 .services .btn:active {
-  background: linear-gradient(45deg, #5DADE2, #85C1E9); /* Couleur plus claire au clic */
+  background: linear-gradient(45deg, #D4AF37, #F1C40F); /* Couleur dorée plus claire au clic */
   transform: scale(1.1); /* Mise en avant au clic */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Réduction de l'ombre au clic */
 }
@@ -181,7 +181,7 @@ footer {
   font-size: 2.5rem;
   margin-top: 40px; /* Augmente la marge supérieure */
   margin-bottom: 20px; /* Augmente la marge inférieure */
-  color: #6B9B7F;
+  color: #1B4332;
 }
 
 .demarches ul {
@@ -195,7 +195,7 @@ footer {
 .demarches li {
   margin: 10px 0;
   font-size: 1.1rem;
-  background:linear-gradient(45deg, #6B9B7F, #98D8C8);
+  background:linear-gradient(45deg, #2D6A4F, #D4AF37);
   border: none;
   color: #ffffff; /* Couleur du texte */
   border-radius: 12px;
@@ -207,7 +207,7 @@ footer {
 .demarches li:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 10px rgba(82, 121, 111, 0.25);
-  background: linear-gradient(45deg, #98D8C8, #6B9B7F); /* Inverse le dégradé au survol */
+  background: linear-gradient(45deg, #D4AF37, #F1C40F); /* Dégradé doré au survol */
 }
 
 .demarches a {
@@ -223,7 +223,7 @@ footer {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #5DADE2; /* Couleur de fond du bouton */
+  background-color: #D4AF37; /* Couleur dorée pour le bouton */
   color: #fff; /* Couleur du texte du bouton */
   text-decoration: none;
   border-radius: 5px;

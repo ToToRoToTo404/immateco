@@ -1,6 +1,6 @@
 /* Styles pour le header */
 header {
-  background-color: #2F3E46;
+  background-color: #1B4332;
   color: white;
   padding: 20px 0;
   position: relative;
@@ -34,7 +34,7 @@ header nav ul li a {
 
 header nav ul li a:hover {
   text-decoration: underline;
-  color: #84A98C;
+  color: #D4AF37;
 }
 
 /* Styles pour le menu burger (mobile) */
