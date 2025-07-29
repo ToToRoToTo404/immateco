@@ -121,7 +121,7 @@
               previewDiv.innerHTML = '<p class="no-preview">Aucune annonce à afficher</p>';
             } else {
               localStorage.setItem('announcementMessage', message);
-              afficherStatus(data.info || 'Annonce mise à jour avec succès !', 'success');
+              afficherStatus('Annonce mise à jour avec succès !', 'success');
               previewDiv.innerHTML = `<div class="announcement">${message}</div>`;
             }
             
@@ -142,11 +142,11 @@
             if (password === 'admin123') {
               if (message === '') {
                 localStorage.removeItem('announcementMessage');
-                afficherStatus('Annonce supprimée avec succès ! (mode local)', 'success');
+                afficherStatus('Annonce supprimée avec succès !', 'success');
                 previewDiv.innerHTML = '<p class="no-preview">Aucune annonce à afficher</p>';
               } else {
                 localStorage.setItem('announcementMessage', message);
-                afficherStatus('Annonce mise à jour avec succès ! (mode local)', 'success');
+                afficherStatus('Annonce mise à jour avec succès !', 'success');
                 previewDiv.innerHTML = `<div class="announcement">${message}</div>`;
               }
               document.getElementById('password').value = '';
