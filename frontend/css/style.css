@@ -1,3 +1,14 @@
+/* Bloc annonce masqué par défaut, affiché par JS si besoin */
+#announcement {
+  display: none;
+  background: #ffe066;
+  color: #333;
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
+}
 /* Styles globaux */
 body {
   font-family: Arial, sans-serif;

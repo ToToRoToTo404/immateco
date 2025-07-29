@@ -1,15 +1,27 @@
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Affichage dynamique de l'annonce sur la page d'accueil depuis localStorage (géré par l'admin)
+document.addEventListener('DOMContentLoaded', async function() {
+    // Affichage dynamique de l'annonce sur la page d'accueil depuis fichier JSON (géré par l'admin)
     const announcementDiv = document.getElementById('announcement');
     if (announcementDiv) {
         const p = announcementDiv.querySelector('p');
-        const message = localStorage.getItem('announcementMessage') || '';
-        if (p) {
-            if (message.trim() !== '') {
-                p.textContent = message;
-                announcementDiv.style.display = '';
-            } else {
+        try {
+            const response = await fetch('announcement.json');
+            const data = await response.json();
+            const message = data.message || '';
+            
+            if (p) {
+                if (message.trim() !== '') {
+                    p.textContent = message;
+                    announcementDiv.style.display = 'block';
+                } else {
+                    p.textContent = '';
+                    announcementDiv.style.display = 'none';
+                }
+            }
+        } catch (error) {
+            console.error('Erreur lors du chargement de l\'annonce:', error);
+            // En cas d'erreur, masquer l'annonce
+            if (p) {
                 p.textContent = '';
                 announcementDiv.style.display = 'none';
             }

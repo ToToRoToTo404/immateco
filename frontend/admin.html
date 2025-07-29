@@ -41,11 +41,20 @@
       const previewDiv = document.getElementById('announcement-preview');
       const statusMessage = document.getElementById('status');
 
-      // Charger le message actuel s'il existe
-      const currentMessage = localStorage.getItem('announcementMessage');
-      if (currentMessage) {
-        messageInput.value = currentMessage;
-        previewDiv.innerHTML = `<div class="announcement">${currentMessage}</div>`;
+      // Charger le message actuel depuis le fichier JSON
+      loadCurrentAnnouncement();
+
+      async function loadCurrentAnnouncement() {
+        try {
+          const response = await fetch('announcement.json');
+          const data = await response.json();
+          if (data.message) {
+            messageInput.value = data.message;
+            previewDiv.innerHTML = `<div class="announcement">${data.message}</div>`;
+          }
+        } catch (error) {
+          console.log('Aucune annonce existante trouvée');
+        }
       }
 
       // Gestion de l'aperçu
@@ -59,36 +68,42 @@
       });
 
       // Gestion du formulaire
-      form.addEventListener('submit', async function(event) {
+      form.addEventListener('submit', function(event) {
         event.preventDefault();
         
         const message = messageInput.value.trim();
         const password = document.getElementById('password').value;
 
         try {
-          // Dans un environnement réel, ceci devrait être vérifié côté serveur
+          // Vérification du mot de passe
           if (password !== 'admin123') { // À remplacer par une vraie authentification
             throw new Error('Mot de passe incorrect');
           }
 
+          // Créer le contenu JSON
+          const jsonContent = {
+            message: message,
+            lastUpdated: new Date().toISOString()
+          };
+
+          // Créer et télécharger le fichier
+          const blob = new Blob([JSON.stringify(jsonContent, null, 2)], { type: 'application/json' });
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.style.display = 'none';
+          a.href = url;
+          a.download = 'announcement.json';
+          document.body.appendChild(a);
+          a.click();
+          window.URL.revokeObjectURL(url);
+          document.body.removeChild(a);
+
           if (message === '') {
-            localStorage.removeItem('announcementMessage');
-            afficherStatus('Le bandeau a été supprimé', 'success');
+            afficherStatus('Fichier généré ! Remplacez le fichier announcement.json sur votre serveur pour supprimer l\'annonce.', 'success');
           } else {
-            localStorage.setItem('announcementMessage', message);
-            afficherStatus('Message mis à jour avec succès !', 'success');
+            afficherStatus('Fichier généré ! Remplacez le fichier announcement.json sur votre serveur pour mettre à jour l\'annonce.', 'success');
             // Rafraîchir l'aperçu
             previewDiv.innerHTML = `<div class="announcement">${message}</div>`;
-          }
-
-          // Mettre à jour l'annonce si on est sur la page d'accueil
-          const activeAnnouncement = document.getElementById('announcement');
-          if (activeAnnouncement) {
-            if (message === '') {
-              activeAnnouncement.style.display = 'none';
-            } else {
-              afficherAnnonce(message);
-            }
           }
 
         } catch (error) {
@@ -106,7 +121,7 @@
             statusMessage.style.display = 'none';
             statusMessage.style.opacity = '1';
           }, 300);
-        }, 3000);
+        }, 5000);
       }
     });
   </script>
