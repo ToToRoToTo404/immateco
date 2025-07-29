@@ -32,7 +32,7 @@
   </div>
   <footer></footer>
   <script src="js/loadComponents.js"></script>
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const form = document.getElementById('admin-form');
@@ -88,7 +88,16 @@
         const message = messageInput.value.trim();
         const password = document.getElementById('password').value;
 
+        console.log('Formulaire soumis:', { message, password });
+
         try {
+          // Vérification simple du mot de passe en local d'abord
+          if (password !== 'admin123') {
+            throw new Error('Mot de passe incorrect');
+          }
+
+          console.log('Mot de passe correct, tentative backend...');
+
           // Envoyer au backend
           const response = await fetch('/api/update-announcement', {
             method: 'POST',
@@ -102,6 +111,7 @@
           });
 
           const data = await response.json();
+          console.log('Réponse backend:', data);
 
           if (data.success) {
             // Aussi sauvegarder en localStorage comme fallback
@@ -123,7 +133,29 @@
 
         } catch (error) {
           console.error('Erreur:', error);
-          afficherStatus(error.message || 'Erreur de connexion', 'error');
+          
+          // Si le backend ne fonctionne pas, on utilise localStorage directement
+          if (error.message.includes('fetch') || error.message.includes('Failed')) {
+            console.log('Backend indisponible, utilisation de localStorage...');
+            
+            // Vérification locale du mot de passe
+            if (password === 'admin123') {
+              if (message === '') {
+                localStorage.removeItem('announcementMessage');
+                afficherStatus('Annonce supprimée avec succès ! (mode local)', 'success');
+                previewDiv.innerHTML = '<p class="no-preview">Aucune annonce à afficher</p>';
+              } else {
+                localStorage.setItem('announcementMessage', message);
+                afficherStatus('Annonce mise à jour avec succès ! (mode local)', 'success');
+                previewDiv.innerHTML = `<div class="announcement">${message}</div>`;
+              }
+              document.getElementById('password').value = '';
+            } else {
+              afficherStatus('Mot de passe incorrect', 'error');
+            }
+          } else {
+            afficherStatus(error.message || 'Erreur de connexion', 'error');
+          }
         }
       });
 
