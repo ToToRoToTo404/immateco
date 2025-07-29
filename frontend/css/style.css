@@ -14,8 +14,8 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: #fdfdfd;
+  color: #444;
   display: flex;
   flex-direction: column;
 }
@@ -42,7 +42,7 @@ footer {
 
 /* Section Hero */
 .hero {
-  background: linear-gradient(to right, #2F3E46, #52796F);
+  background: linear-gradient(to right, #6B9B7F, #8FBC8F);
   color: white;
   text-align: center;
   padding: 40px 20px;
@@ -90,7 +90,7 @@ footer {
 .services h2 {
   font-family: 'Roboto', sans-serif; /* Police moderne et lisible */
   font-size: 2.5rem; /* Taille de police agrandie */
-  color: #52796F; /* Couleur du texte */
+  color: #6B9B7F; /* Couleur du texte éclaircie */
   text-align: center; /* Centrer le titre */
   margin-bottom: 20px; /* Espacement sous le titre */
 }
@@ -145,7 +145,7 @@ footer {
   margin: 20px auto; /* Centre le bouton avec une marge automatique */
   width: fit-content; /* Ajuste la largeur au contenu */
   padding: 15px 30px; /* Espacement interne augmenté pour un meilleur confort visuel */
-  background: linear-gradient(45deg, #52796F, #84A98C); /* Dégradé moderne */
+  background: linear-gradient(45deg, #6B9B7F, #98D8C8); /* Dégradé moderne éclaircit */
   color: #ffffff; /* Couleur du texte */
   font-size: 1.3rem; /* Taille de police légèrement agrandie */
   font-weight: bold; /* Texte en gras */
@@ -159,7 +159,7 @@ footer {
 
 /* Ajout d'un effet visuel pour les appareils mobiles en utilisant :active pour simuler le hover */
 .services .btn:active {
-  background: linear-gradient(45deg, #005f73, #0096c7); /* Couleur plus sombre au clic */
+  background: linear-gradient(45deg, #5DADE2, #85C1E9); /* Couleur plus claire au clic */
   transform: scale(1.1); /* Mise en avant au clic */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Réduction de l'ombre au clic */
 }
@@ -181,7 +181,7 @@ footer {
   font-size: 2.5rem;
   margin-top: 40px; /* Augmente la marge supérieure */
   margin-bottom: 20px; /* Augmente la marge inférieure */
-  color: #52796F;
+  color: #6B9B7F;
 }
 
 .demarches ul {
@@ -195,7 +195,7 @@ footer {
 .demarches li {
   margin: 10px 0;
   font-size: 1.1rem;
-  background:linear-gradient(45deg, #52796F, #84A98C);
+  background:linear-gradient(45deg, #6B9B7F, #98D8C8);
   border: none;
   color: #ffffff; /* Couleur du texte */
   border-radius: 12px;
@@ -207,7 +207,7 @@ footer {
 .demarches li:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 10px rgba(82, 121, 111, 0.25);
-  background: linear-gradient(45deg, #84A98C, #52796F); /* Inverse le dégradé au survol */
+  background: linear-gradient(45deg, #98D8C8, #6B9B7F); /* Inverse le dégradé au survol */
 }
 
 .demarches a {
@@ -223,7 +223,7 @@ footer {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #0d47a1; /* Couleur de fond du bouton */
+  background-color: #5DADE2; /* Couleur de fond du bouton */
   color: #fff; /* Couleur du texte du bouton */
   text-decoration: none;
   border-radius: 5px;
@@ -240,7 +240,7 @@ footer {
 .horaires h2 {
   font-size: 2.5rem; /* Augmente la taille du titre */
   margin-bottom: 20px; /* Ajoute un espacement sous le titre */
-  color: #52796F; /* Couleur du texte du titre */
+  color: #6B9B7F; /* Couleur du texte du titre */
 }
 
 .horaires-table {
@@ -259,7 +259,7 @@ footer {
 }
 
 .horaires-table thead th {
-  background-color: #52796F; /* Couleur de fond des en-têtes */
+  background-color: #6B9B7F; /* Couleur de fond des en-têtes */
   color: #fff; /* Couleur du texte des en-têtes */
   text-align: center; /* Centre le texte des en-têtes */
 }
@@ -321,7 +321,7 @@ footer {
 
 .documents h2 {
   font-size: 2rem; /* Taille de police agrandie pour le titre */
-  color: #52796F; /* Couleur du texte */
+  color: #6B9B7F; /* Couleur du texte */
   text-align: center; /* Centrer le titre */
   margin-bottom: 20px; /* Espacement sous le titre */
 }
@@ -350,7 +350,7 @@ footer {
 
 .documents ul li button {
   padding: 5px 10px; /* Taille du bouton */
-  background: linear-gradient(45deg, #52796F, #84A98C); /* Couleur de fond */
+  background: linear-gradient(45deg, #6B9B7F, #98D8C8); /* Couleur de fond */
   color: #fff; /* Couleur du texte */
   border: none; /* Suppression des bordures */
   border-radius: 5px; /* Coins arrondis */
@@ -433,7 +433,7 @@ footer {
 
 .contact-form h2 {
   font-size: 2rem; /* Taille de police agrandie */
-  color: #52796F; /* Couleur du texte */
+  color: #6B9B7F; /* Couleur du texte */
   text-align: center; /* Centrer le titre */
   margin-bottom: 20px; /* Espacement sous le titre */
 }
@@ -458,7 +458,7 @@ footer {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #52796F; /* Couleur de bordure au focus */
+  border-color: #6B9B7F; /* Couleur de bordure au focus */
   outline: none; /* Supprime le contour par défaut */
   box-shadow: 0 0 5px rgba(82, 121, 111, 0.5); /* Effet lumineux au focus avec la couleur principale */
 }
@@ -467,7 +467,7 @@ footer {
   display: block; /* Bouton centré */
   width: 100%; /* Prend toute la largeur */
   padding: 12px; /* Espacement interne légèrement augmenté */
-  background: linear-gradient(45deg, #52796F, #84A98C); /* Dégradé cohérent */
+  background: linear-gradient(45deg, #6B9B7F, #98D8C8); /* Dégradé cohérent */
   color: #fff; /* Couleur du texte */
   border: none; /* Supprime les bordures */
   border-radius: 8px; /* Coins arrondis */
@@ -479,7 +479,7 @@ footer {
 }
 
 .contact-form button:hover {
-  background: linear-gradient(45deg, #84A98C, #52796F); /* Inverse le dégradé au survol */
+  background: linear-gradient(45deg, #98D8C8, #6B9B7F); /* Inverse le dégradé au survol */
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(82, 121, 111, 0.3);
 }
@@ -523,7 +523,7 @@ form input, form textarea, form button {
 }
 
 form button {
-  background-color: #52796F;
+  background-color: #6B9B7F;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -543,7 +543,7 @@ form button:hover {
 
 .form-preview h2 {
   font-size: 1.2rem;
-  color: #52796F;
+  color: #6B9B7F;
   margin-bottom: 15px;
 }
 
@@ -582,14 +582,14 @@ form button:hover {
 }
 
 .primary-button {
-  background: linear-gradient(45deg, #52796F, #84A98C);
+  background: linear-gradient(45deg, #6B9B7F, #98D8C8);
   color: white;
   flex: 2;
 }
 
 .secondary-button {
   background: #f0f0f0;
-  color: #52796F;
+  color: #6B9B7F;
   flex: 1;
 }
 
@@ -621,20 +621,20 @@ form button:hover {
 
 /* Effets hover pour les liens */
 nav a:hover {
-  color: #52796F; /* Changement de couleur au survol */
+  color: #6B9B7F; /* Changement de couleur au survol */
   text-decoration: underline; /* Ajout d'un soulignement */
 }
 
 /* Effets hover pour les boutons */
 button:hover, .btn:hover {
-  background: linear-gradient(45deg, #84A98C, #52796F); /* Inverse le dégradé au survol */
+  background: linear-gradient(45deg, #98D8C8, #6B9B7F); /* Inverse le dégradé au survol */
   transform: scale(1.05); /* Légère mise en avant */
   box-shadow: 0 4px 6px rgba(82, 121, 111, 0.3); /* Ombre plus marquée avec la couleur principale */
 }
 
 /* Effets actifs pour les liens */
 nav a:active {
-  color: #84A98C; /* Changement de couleur au clic */
+  color: #98D8C8; /* Changement de couleur au clic */
   text-decoration: underline; /* Ajout d'un soulignement */
 }
 
@@ -659,7 +659,7 @@ button:active, .btn:active {
   font-size: 1em;
   font-weight: bold;
   padding: 10px 20px;
-  background: linear-gradient(45deg, #52796F, #84A98C);
+  background: linear-gradient(45deg, #6B9B7F, #98D8C8);
   border: none;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -676,7 +676,7 @@ button:active, .btn:active {
   display: block;
   margin: 20px auto;
   padding: 12px 25px;
-  background: linear-gradient(45deg, #52796F, #84A98C);
+  background: linear-gradient(45deg, #6B9B7F, #98D8C8);
   color: white;
   border: none;
   border-radius: 8px;
