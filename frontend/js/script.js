@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             }
         }
     } else {
-        console.error('Element #announcement non trouvé !');
+        console.log('Pas de bandeau d\'annonce sur cette page (normal pour admin.html)');
     }
 
     // Menu burger responsive

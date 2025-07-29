@@ -1,4 +1,7 @@
 // Fonction pour récupérer l'annonce actuelle
+const fs = require('fs');
+const path = require('path');
+
 exports.handler = async (event, context) => {
   // Configuration CORS
   const headers = {
@@ -19,17 +22,27 @@ exports.handler = async (event, context) => {
 
   if (event.httpMethod === 'GET') {
     try {
-      // Simulation d'une base de données avec une variable d'environnement
-      // En production, vous utiliseriez une vraie base de données
-      const announcement = process.env.ANNOUNCEMENT_MESSAGE || '';
+      // Lire le fichier JSON depuis le dossier frontend/data
+      const dataPath = path.join(process.cwd(), 'frontend', 'data', 'announcement.json');
+      
+      let announcementData = { message: '', lastUpdated: new Date().toISOString() };
+      
+      try {
+        if (fs.existsSync(dataPath)) {
+          const fileContent = fs.readFileSync(dataPath, 'utf8');
+          announcementData = JSON.parse(fileContent);
+        }
+      } catch (fileError) {
+        console.log('Fichier announcement.json non trouvé ou invalide, utilisation des valeurs par défaut');
+      }
       
       return {
         statusCode: 200,
         headers,
         body: JSON.stringify({
           success: true,
-          message: announcement,
-          lastUpdated: process.env.ANNOUNCEMENT_UPDATED || new Date().toISOString()
+          message: announcementData.message || '',
+          lastUpdated: announcementData.lastUpdated || new Date().toISOString()
         })
       };
     } catch (error) {

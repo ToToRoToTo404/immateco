@@ -1,4 +1,7 @@
 // Fonction pour mettre à jour l'annonce
+const fs = require('fs');
+const path = require('path');
+
 exports.handler = async (event, context) => {
   // Configuration CORS
   const headers = {
@@ -33,15 +36,26 @@ exports.handler = async (event, context) => {
         };
       }
 
-      // Dans un environnement réel, vous stockeriez ceci dans une base de données
-      // Pour Netlify Functions, nous devons utiliser un service externe comme:
-      // - Netlify Forms
-      // - Fauna DB
-      // - Supabase
-      // - Airtable
-      
-      // Pour l'instant, nous retournons juste un succès
-      // L'annonce sera stockée côté client en attendant une vraie base de données
+      // Sauvegarder dans le fichier JSON
+      const dataPath = path.join(process.cwd(), 'frontend', 'data', 'announcement.json');
+      const announcementData = {
+        message: message || '',
+        lastUpdated: new Date().toISOString()
+      };
+
+      try {
+        // Créer le dossier data s'il n'existe pas
+        const dataDir = path.dirname(dataPath);
+        if (!fs.existsSync(dataDir)) {
+          fs.mkdirSync(dataDir, { recursive: true });
+        }
+
+        // Écrire le fichier
+        fs.writeFileSync(dataPath, JSON.stringify(announcementData, null, 2));
+      } catch (fileError) {
+        console.error('Erreur lors de l\'écriture du fichier:', fileError);
+        throw new Error('Impossible de sauvegarder l\'annonce');
+      }
       
       return {
         statusCode: 200,
@@ -49,7 +63,7 @@ exports.handler = async (event, context) => {
         body: JSON.stringify({
           success: true,
           message: message || '',
-          info: 'Annonce mise à jour avec succès ! Note: Pour une persistance complète, une base de données est nécessaire.'
+          info: 'Annonce mise à jour avec succès !'
         })
       };
     } catch (error) {
@@ -58,7 +72,7 @@ exports.handler = async (event, context) => {
         headers,
         body: JSON.stringify({
           success: false,
-          error: 'Données invalides'
+          error: error.message || 'Données invalides'
         })
       };
     }
