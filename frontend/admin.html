@@ -41,20 +41,12 @@
       const previewDiv = document.getElementById('announcement-preview');
       const statusMessage = document.getElementById('status');
 
-      // Charger le message actuel depuis le fichier JSON
+      // Charger le message actuel depuis le fichier script.js (simulation)
       loadCurrentAnnouncement();
 
-      async function loadCurrentAnnouncement() {
-        try {
-          const response = await fetch('announcement.json');
-          const data = await response.json();
-          if (data.message) {
-            messageInput.value = data.message;
-            previewDiv.innerHTML = `<div class="announcement">${data.message}</div>`;
-          }
-        } catch (error) {
-          console.log('Aucune annonce existante trouvée');
-        }
+      function loadCurrentAnnouncement() {
+        // Simulation du chargement - en réalité, vous devrez vérifier manuellement script.js
+        previewDiv.innerHTML = '<p class="no-preview">Vérifiez le fichier script.js pour voir l\'annonce actuelle</p>';
       }
 
       // Gestion de l'aperçu
@@ -76,32 +68,44 @@
 
         try {
           // Vérification du mot de passe
-          if (password !== 'admin123') { // À remplacer par une vraie authentification
+          if (password !== 'admin123') {
             throw new Error('Mot de passe incorrect');
           }
 
-          // Créer le contenu JSON
-          const jsonContent = {
-            message: message,
-            lastUpdated: new Date().toISOString()
-          };
+          // Générer le code JavaScript à copier dans script.js
+          const enabled = message !== '';
+          const jsCode = `    // Configuration de l'annonce (modifiable par l'admin)
+    const ANNOUNCEMENT_CONFIG = {
+        message: "${message.replace(/"/g, '\\"')}", // Laissez vide pour masquer l'annonce, ou écrivez votre message ici
+        enabled: ${enabled} // true pour afficher, false pour masquer
+    };`;
 
-          // Créer et télécharger le fichier
-          const blob = new Blob([JSON.stringify(jsonContent, null, 2)], { type: 'application/json' });
-          const url = window.URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.style.display = 'none';
-          a.href = url;
-          a.download = 'announcement.json';
-          document.body.appendChild(a);
-          a.click();
-          window.URL.revokeObjectURL(url);
-          document.body.removeChild(a);
+          // Afficher le code dans une zone de texte pour copier-coller
+          const codeDisplay = document.createElement('div');
+          codeDisplay.innerHTML = `
+            <h3>Code à copier dans js/script.js :</h3>
+            <textarea readonly style="width: 100%; height: 120px; font-family: monospace; background: #f5f5f5; padding: 10px; border: 1px solid #ccc;">${jsCode}</textarea>
+            <p><strong>Instructions :</strong></p>
+            <ol>
+              <li>Copiez le code ci-dessus</li>
+              <li>Ouvrez le fichier <code>js/script.js</code></li>
+              <li>Remplacez la section ANNOUNCEMENT_CONFIG par ce nouveau code</li>
+              <li>Sauvegardez et faites un commit pour déployer</li>
+            </ol>
+          `;
+          
+          // Insérer le code après le formulaire
+          const existingCode = document.querySelector('.code-display');
+          if (existingCode) {
+            existingCode.remove();
+          }
+          codeDisplay.className = 'code-display';
+          form.parentNode.insertBefore(codeDisplay, form.nextSibling);
 
           if (message === '') {
-            afficherStatus('Fichier généré ! Remplacez le fichier announcement.json sur votre serveur pour supprimer l\'annonce.', 'success');
+            afficherStatus('Code généré pour supprimer l\'annonce ! Copiez-le dans script.js', 'success');
           } else {
-            afficherStatus('Fichier généré ! Remplacez le fichier announcement.json sur votre serveur pour mettre à jour l\'annonce.', 'success');
+            afficherStatus('Code généré pour l\'annonce ! Copiez-le dans script.js', 'success');
             // Rafraîchir l'aperçu
             previewDiv.innerHTML = `<div class="announcement">${message}</div>`;
           }
