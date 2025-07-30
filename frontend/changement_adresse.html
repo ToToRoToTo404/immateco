@@ -55,12 +55,45 @@
       <div class="container">
         <h2>Changement d'adresse</h2>
         <p>Pour effectuer un changement d'adresse, vous devez fournir les documents suivants:</p>
-        <ul>
-          <li>Justificatif de domicile de moins de 6 mois</li>
-          <li>Pièce d'identité valide</li>
-          <li>Mandat <button onclick="window.open('documents/cerfa_13757-03.pdf', '_blank')">Imprimer</button></li>
-          <li>Demande de certificat d'immatriculation d'un véhicule<button onclick="window.open('documents/cerfa_13750-07.pdf', '_blank')">Imprimer</button></li>
-        </ul>
+        <div class="documents-grid">
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">🏠</div>
+            <div class="card-content">
+              <h3>Justificatif de domicile</h3>
+              <p>Document de moins de 6 mois</p>
+            </div>
+          </div>
+          
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">🆔</div>
+            <div class="card-content">
+              <h3>Pièce d'identité</h3>
+              <p>Carte d'identité ou passeport valide</p>
+            </div>
+          </div>
+          
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">📋</div>
+            <div class="card-content">
+              <h3>Mandat</h3>
+              <p>Formulaire obligatoire pour la demande</p>
+              <button onclick="window.open('documents/cerfa_13757-03.pdf', '_blank')" class="print-btn">
+                📄 Imprimer
+              </button>
+            </div>
+          </div>
+          
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">📄</div>
+            <div class="card-content">
+              <h3>Demande de certificat</h3>
+              <p>Formulaire d'immatriculation véhicule</p>
+              <button onclick="window.open('documents/cerfa_13750-07.pdf', '_blank')" class="print-btn">
+                📄 Imprimer
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <div class="container">

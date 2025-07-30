@@ -30,11 +30,45 @@ document.addEventListener('DOMContentLoaded', async function() {
     // Menu burger responsive
     const burger = document.getElementById("burger");
     const navMenu = document.getElementById("nav-menu");
+    const menuOverlay = document.getElementById("menu-overlay");
+    
     if (burger && navMenu) {
         burger.addEventListener("click", () => {
             navMenu.classList.toggle("active");
+            burger.classList.toggle("active");
+            if (menuOverlay) {
+                menuOverlay.classList.toggle("active");
+            }
         });
+        
+        // Fermer le menu en cliquant sur l'overlay
+        if (menuOverlay) {
+            menuOverlay.addEventListener("click", () => {
+                navMenu.classList.remove("active");
+                burger.classList.remove("active");
+                menuOverlay.classList.remove("active");
+            });
+        }
     }
+
+    // Animations au scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    // Observer tous les éléments avec la classe animate-on-scroll
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.observe(el);
+    });
 });
 
 

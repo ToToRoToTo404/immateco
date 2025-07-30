@@ -54,12 +54,44 @@ header nav ul li a:hover {
   width: 100%;
   background-color: white;
   border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animation du burger en X quand le menu est actif */
+.burger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
 }
 
 /* Styles responsives */
 @media (max-width: 768px) {
   .burger {
     display: flex; /* Affiché en mobile */
+  }
+
+  /* Overlay avec flou d'arrière-plan */
+  .menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(27, 67, 50, 0.3);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .menu-overlay.active {
+    display: block;
   }
 
   #nav-menu {

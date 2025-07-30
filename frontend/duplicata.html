@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IMMAT&CO - Duplicata</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
@@ -55,13 +58,56 @@
       <div class="container">
         <h2>Demande de duplicata</h2>
         <p>Pour demander un duplicata, vous devez fournir les documents suivants:</p>
-        <ul>
-          <li>Justificatif de domicile de moins de 6 mois</li>
-          <li>Pièce d'identité valide</li>
-          <li>Mandat <button onclick="window.open('documents/cerfa_13757-03.pdf', '_blank')">Imprimer</button></li>
-          <li>Demande de certificat d'immatriculation d'un véhicule<button onclick="window.open('documents/cerfa_13750-07.pdf', '_blank')">Imprimer</button></li>
-          <li>Certificat de perte<button onclick="window.open('documents/cerfa_13753-04.pdf', '_blank')">Imprimer</button></li>
-        </ul>
+        <div class="documents-grid">
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">🏠</div>
+            <div class="card-content">
+              <h3>Justificatif de domicile</h3>
+              <p>Document de moins de 6 mois</p>
+            </div>
+          </div>
+          
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">🆔</div>
+            <div class="card-content">
+              <h3>Pièce d'identité</h3>
+              <p>Carte d'identité ou passeport valide</p>
+            </div>
+          </div>
+          
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">📋</div>
+            <div class="card-content">
+              <h3>Mandat</h3>
+              <p>Formulaire obligatoire pour la demande</p>
+              <button onclick="window.open('documents/cerfa_13757-03.pdf', '_blank')" class="print-btn">
+                📄 Imprimer
+              </button>
+            </div>
+          </div>
+          
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">📄</div>
+            <div class="card-content">
+              <h3>Demande de certificat</h3>
+              <p>Formulaire d'immatriculation véhicule</p>
+              <button onclick="window.open('documents/cerfa_13750-07.pdf', '_blank')" class="print-btn">
+                📄 Imprimer
+              </button>
+            </div>
+          </div>
+          
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">🔍</div>
+            <div class="card-content">
+              <h3>Certificat de perte</h3>
+              <p>Déclaration de perte ou vol</p>
+              <button onclick="window.open('documents/cerfa_13753-04.pdf', '_blank')" class="print-btn">
+                📄 Imprimer
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <div class="container">

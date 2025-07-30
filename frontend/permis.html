@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IMMAT&CO - Permis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
@@ -27,6 +30,7 @@
         </ul>
       </nav>
     </div>
+    <div class="menu-overlay" id="menu-overlay"></div>
   </header>
   <main>
     <section class="hero">
@@ -39,15 +43,69 @@
       <div class="container">
         <h2>Demande de permis de conduire</h2>
         <p>Pour demander un permis de conduire, vous devez fournir les documents suivants:</p>
-        <ul>
-          <li>Mandat<button onclick="window.open('documents/cerfa_13757-03.pdf', '_blank')">Imprimer</button></li>
-          <li>Pièce d'identité valide recto-verso</li>
-          <li>Justificatif de domicile de moins de 6 mois</li>
-          <li>Photos d'identité numériques</li>
-          <li>Certificat médical (Si besoin)<button onclick="window.open('documents/cerfa_14880-02.pdf', '_blank')">Imprimer</button></li>
-          <li>Timbre fiscal de 25€ si perte ou vol.</li>
-          <li>permis de conduire (si renouvellement)</li>
-        </ul>
+        <div class="documents-grid">
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">📋</div>
+            <div class="card-content">
+              <h3>Mandat</h3>
+              <p>Formulaire obligatoire pour la demande</p>
+              <button onclick="window.open('documents/cerfa_13757-03.pdf', '_blank')" class="print-btn">
+                📄 Imprimer
+              </button>
+            </div>
+          </div>
+          
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">🆔</div>
+            <div class="card-content">
+              <h3>Pièce d'identité</h3>
+              <p>Carte d'identité recto-verso</p>
+            </div>
+          </div>
+          
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">🏠</div>
+            <div class="card-content">
+              <h3>Justificatif de domicile</h3>
+              <p>Document de moins de 6 mois</p>
+            </div>
+          </div>
+          
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">📸</div>
+            <div class="card-content">
+              <h3>Photos d'identité</h3>
+              <p>Photos numériques conformes</p>
+            </div>
+          </div>
+          
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">🏥</div>
+            <div class="card-content">
+              <h3>Certificat médical</h3>
+              <p>Si besoin selon votre situation</p>
+              <button onclick="window.open('documents/cerfa_14880-02.pdf', '_blank')" class="print-btn">
+                📄 Imprimer
+              </button>
+            </div>
+          </div>
+          
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">💰</div>
+            <div class="card-content">
+              <h3>Timbre fiscal</h3>
+              <p>25€ en cas de perte ou vol</p>
+            </div>
+          </div>
+          
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">🚗</div>
+            <div class="card-content">
+              <h3>Ancien permis</h3>
+              <p>Si renouvellement ou remplacement</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>

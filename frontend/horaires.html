@@ -4,33 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IMMAT&CO - Horaires</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/buttons.css">
-  <style>
-    .return-button {
-      display: block;
-      margin: 20px auto;
-      padding: 10px 20px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      text-align: center;
-    }
-    .return-button:hover {
-      background-color: #0056b3;
-    }
-  </style>
 </head>
 <body>
 
   <header>
     <div class="container">
-      <h1>IMMAT&CO</h1>
+      <h1 class="logo">IMMAT&CO</h1>
       <div class="burger" id="burger">
         <span></span>
         <span></span>
@@ -45,56 +31,103 @@
         </ul>
       </nav>
     </div>
+    <div class="menu-overlay" id="menu-overlay"></div>
   </header>
 
   <main>
     <section class="hero">
-      <h2>Bienvenue chez IMMAT&CO</h2>
-      <h3>Saint-Palais</h3>
-      <p>Votre partenaire de confiance pour toutes vos démarches d’immatriculation de véhicules.</p>
+      <div class="container">
+        <h2>Bienvenue chez IMMAT&CO</h2>
+        <h3>Saint-Palais</h3>
+        <p>Votre partenaire de confiance pour toutes vos démarches d'immatriculation de véhicules.</p>
+      </div>
     </section>
-    <!-- Contenu spécifique à la page horaires -->
-    <section class="horaires">
-      <h2>Nos Horaires</h2>
-      <table class="horaires-table">
-        <thead>
-          <tr>
-            <th>Jour</th>
-            <th>Horaires</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Lundi</td>
-            <td>9h30 - 12h00, 14h30 - 18h00</td>
-          </tr>
-          <tr>
-            <td>Mardi</td>
-            <td>9h30 - 12h00, 14h30 - 18h00</td>
-          </tr>
-          <tr>
-            <td>Mercredi</td>
-            <td>9h30 - 12h00, 14h30 - 18h00</td>
-          </tr>
-          <tr>
-            <td>Jeudi</td>
-            <td>9h30 - 12h00, 14h30 - 18h00</td>
-          </tr>
-          <tr>
-            <td>Vendredi</td>
-            <td>9h30 - 12h00, 14h30 - 18h00</td>
-          </tr>
-          <tr class="ferme">
-            <td>Samedi</td>
-            <td>Fermé</td>
-          </tr>
-          <tr class="ferme">
-            <td>Dimanche</td>
-            <td>Fermé</td>
-          </tr>
-        </tbody>
-      </table>
+
+    <!-- Section Horaires Modernisée -->
+    <section class="horaires-modern">
+      <div class="container">
+        <h2>Nos Horaires d'Ouverture</h2>
+        <p>Nous sommes à votre disposition aux heures suivantes :</p>
+        
+        <div class="horaires-grid">
+          <div class="horaire-card animate-on-scroll">
+            <div class="card-icon">📅</div>
+            <div class="card-content">
+              <h3>Lundi</h3>
+              <div class="horaire-detail">
+                <span class="time">🌅 9h30 - 12h00</span>
+                <span class="time">🌆 14h30 - 18h00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="horaire-card animate-on-scroll">
+            <div class="card-icon">📅</div>
+            <div class="card-content">
+              <h3>Mardi</h3>
+              <div class="horaire-detail">
+                <span class="time">🌅 9h30 - 12h00</span>
+                <span class="time">🌆 14h30 - 18h00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="horaire-card animate-on-scroll">
+            <div class="card-icon">📅</div>
+            <div class="card-content">
+              <h3>Mercredi</h3>
+              <div class="horaire-detail">
+                <span class="time">🌅 9h30 - 12h00</span>
+                <span class="time">🌆 14h30 - 18h00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="horaire-card animate-on-scroll">
+            <div class="card-icon">📅</div>
+            <div class="card-content">
+              <h3>Jeudi</h3>
+              <div class="horaire-detail">
+                <span class="time">🌅 9h30 - 12h00</span>
+                <span class="time">🌆 14h30 - 18h00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="horaire-card animate-on-scroll">
+            <div class="card-icon">📅</div>
+            <div class="card-content">
+              <h3>Vendredi</h3>
+              <div class="horaire-detail">
+                <span class="time">🌅 9h30 - 12h00</span>
+                <span class="time">🌆 14h30 - 18h00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="horaire-card closed animate-on-scroll">
+            <div class="card-icon">🚫</div>
+            <div class="card-content">
+              <h3>Samedi</h3>
+              <div class="horaire-detail">
+                <span class="closed-text">Fermé</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="horaire-card closed animate-on-scroll">
+            <div class="card-icon">🚫</div>
+            <div class="card-content">
+              <h3>Dimanche</h3>
+              <div class="horaire-detail">
+                <span class="closed-text">Fermé</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
+    
     <div class="container">
       <button class="return-button" onclick="window.history.back()">Retour</button>
     </div>

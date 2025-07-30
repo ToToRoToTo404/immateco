@@ -2,16 +2,37 @@
 .return-button {
   display: block;
   margin: 20px auto;
-  padding: 10px 20px;
-  background-color: #2D6A4F;
+  padding: 12px 24px;
+  background: linear-gradient(145deg, #2D6A4F, #1B4332);
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
   text-align: center;
+  box-shadow: 
+    0 4px 8px rgba(27, 67, 50, 0.3),
+    0 2px 4px rgba(27, 67, 50, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  transform: perspective(1px) translateZ(0);
+  position: relative;
+  overflow: hidden;
 }
 
 .return-button:hover {
-  background-color: #D4AF37;
+  background: linear-gradient(145deg, #D4AF37, #B8941F);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 12px rgba(212, 175, 55, 0.4),
+    0 4px 8px rgba(212, 175, 55, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.return-button:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 2px 4px rgba(27, 67, 50, 0.3),
+    0 1px 2px rgba(27, 67, 50, 0.2),
+    inset 0 1px 0 rgba(0, 0, 0, 0.1);
 }
