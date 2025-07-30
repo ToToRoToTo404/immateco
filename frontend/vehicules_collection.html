@@ -1,30 +1,16 @@
-<!DOCTYPE html>
-<html lang="fr">
+ <!DOCTYPE html>
+<html lang="fr">    
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IMMAT&CO - Véhicules de Collection</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/buttons.css">
-  <style>
-    .return-button {
-      display: block;
-      margin: 20px auto;
-      padding: 10px 20px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      text-align: center;
-    }
-    .return-button:hover {
-      background-color: #0056b3;
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -44,6 +30,7 @@
         </ul>
       </nav>
     </div>
+    <div class="menu-overlay" id="menu-overlay"></div>
   </header>
   <main>
     <section class="hero">
@@ -54,27 +41,95 @@
     </section>
     <section class="documents">
       <div class="container">
-        <h2>Demande d'immatriculation d'un véhicule de collection</h2>
-        <p>Pour demander l'immatriculation d'un véhicule de collection, vous devez fournir les documents suivants:</p>
-        <ul>
-          <li>Mandat<button onclick="window.open('documents/cerfa_13757-03.pdf', '_blank')">Imprimer</button></li>
-          <li>Formulaire de demande d'immatriculation<button onclick="window.open('documents/cerfa_13750-07.pdf', '_blank')">Imprimer</button></li>
-          <li>Carte grise du véhicule</li>
-          <li>Justificatif de domicile de moins de 6 mois</li>
-          <li>Pièce d'identité</li>
-          <li>Attestation d'assurance</li>
-          <li>Permis de conduire</li>
-          <li>Contrôle technique de moins de 6 mois</li>
-          <li>Attestation FFVE<button onclick="window.open('documents/liste-photos-collection.pdf', '_blank')">consulter</button></li>
-        </ul>
+        <h2>Véhicules de Collection</h2>
+        <p>Documents nécessaires pour l'immatriculation d'un véhicule de collection :</p>
+        
+        <div class="documents-grid">
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">📝</div>
+            <div class="card-content">
+              <h3>Mandat</h3>
+              <p>Autorisation pour effectuer les démarches</p>
+              <button class="print-button" onclick="window.open('documents/cerfa_13757-03.pdf', '_blank')">📄 Imprimer</button>
+            </div>
+          </div>
+
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">📋</div>
+            <div class="card-content">
+              <h3>Demande d'Immatriculation</h3>
+              <p>Formulaire de demande officiel</p>
+              <button class="print-button" onclick="window.open('documents/cerfa_13750-07.pdf', '_blank')">📄 Imprimer</button>
+            </div>
+          </div>
+
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">📄</div>
+            <div class="card-content">
+              <h3>Carte Grise</h3>
+              <p>Document d'immatriculation du véhicule</p>
+            </div>
+          </div>
+
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">🏠</div>
+            <div class="card-content">
+              <h3>Justificatif de Domicile</h3>
+              <p>Document de moins de 6 mois</p>
+            </div>
+          </div>
+
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">🆔</div>
+            <div class="card-content">
+              <h3>Pièce d'Identité</h3>
+              <p>Document d'identité valide</p>
+            </div>
+          </div>
+
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">🛡️</div>
+            <div class="card-content">
+              <h3>Attestation d'Assurance</h3>
+              <p>Document en cours de validité</p>
+            </div>
+          </div>
+
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">🚗</div>
+            <div class="card-content">
+              <h3>Permis de Conduire</h3>
+              <p>Correspondant à la catégorie du véhicule</p>
+            </div>
+          </div>
+
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">🔧</div>
+            <div class="card-content">
+              <h3>Contrôle Technique</h3>
+              <p>De moins de 6 mois</p>
+            </div>
+          </div>
+
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">🏆</div>
+            <div class="card-content">
+              <h3>Attestation FFVE</h3>
+              <p>Certification véhicule de collection</p>
+              <button class="print-button" onclick="window.open('documents/liste-photos-collection.pdf', '_blank')">📄 Consulter</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="container">
+          <button class="return-button" onclick="window.history.back()">Retour</button>
+        </div>
       </div>
     </section>
   </main>
-  <div class="container">
-    <button class="return-button" onclick="window.history.back()">Retour</button>
-  </div>
+
   <footer></footer>
   <script src="js/loadComponents.js"></script>
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
