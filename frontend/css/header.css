@@ -69,7 +69,7 @@ header nav ul li a:hover {
     right: 0;
     width: 70%;
     height: 100%;
-    background-color: #2F3E46;
+    background-color: #1B4332;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -94,7 +94,7 @@ header nav ul li a:hover {
   }
 
   #nav-menu ul li a:hover {
-    color: #84A98C;
+    color: #D4AF37;
     text-decoration: none;
   }
 }
