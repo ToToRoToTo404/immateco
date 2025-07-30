@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IMMAT&CO - Déclaration d'achat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
@@ -23,34 +26,62 @@
           <li><a href="index.html">Accueil</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="horaires.html">Horaires</a></li>
-          <li><a href="documents.html">Documents</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
+    <div class="menu-overlay" id="menu-overlay"></div>
   </header>
+
   <main>
     <section class="hero">
       <div class="container">
         <h2>Bienvenue chez IMMAT&CO</h2>
-        <p>Votre partenaire de confiance pour toutes vos démarches d’immatriculation de véhicules.</p>
-    
+        <h3>Saint-Palais</h3>
+        <p>Votre partenaire de confiance pour toutes vos démarches d'immatriculation de véhicules.</p>
       </div>
     </section>
-     <section class="documents">
+
+    <section class="documents">
       <div class="container">
-        <h2>Déclaration d'achat</h2>
-        <p>Pour effectuer une déclaration d'achat, vous devez fournir les documents suivants :</p>
-        <ul>
-          <li>Certificat d'achat<button onclick="window.open('documents/cerfa_13751-02.pdf', '_blank')">Imprimer</button></li>
-          <li>Certificat de cession <button onclick="window.open('documents/cerfa_15776-01.pdf', '_blank')">Imprimer</button></li>
-          <li>carte grise</li>
-        </ul>
+        <h2>Déclaration d'Achat de Véhicule</h2>
+        <p>Documents nécessaires pour effectuer une déclaration d'achat :</p>
+        
+        <div class="documents-grid">
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">📋</div>
+            <div class="card-content">
+              <h3>Certificat d'Achat</h3>
+              <p>Document officiel de déclaration d'achat</p>
+              <button class="print-button" onclick="window.open('documents/cerfa_13751-02.pdf', '_blank')">📄 Imprimer</button>
+            </div>
+          </div>
+
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">📝</div>
+            <div class="card-content">
+              <h3>Certificat de Cession</h3>
+              <p>Formulaire de cession du véhicule</p>
+              <button class="print-button" onclick="window.open('documents/cerfa_15776-01.pdf', '_blank')">📄 Imprimer</button>
+            </div>
+          </div>
+
+          <div class="document-card animate-on-scroll">
+            <div class="card-icon">📄</div>
+            <div class="card-content">
+              <h3>Carte Grise</h3>
+              <p>Document d'immatriculation du véhicule</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="container">
+          <button class="return-button" onclick="window.history.back()">Retour</button>
+        </div>
       </div>
     </section>
-    <div class="container">
-      <button class="return-button" onclick="window.history.back()">Retour</button>
-    </div>
   </main>
+
   <footer></footer>
   <script src="js/loadComponents.js"></script>
   <script src="js/script.js"></script>

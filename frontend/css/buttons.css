@@ -36,3 +36,39 @@
     0 1px 2px rgba(27, 67, 50, 0.2),
     inset 0 1px 0 rgba(0, 0, 0, 0.1);
 }
+
+/* Styles pour les boutons d'impression */
+.print-button {
+  background: linear-gradient(145deg, #D4AF37, #B8941F);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 
+    0 3px 6px rgba(212, 175, 55, 0.3),
+    0 1px 3px rgba(212, 175, 55, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  transform: perspective(1px) translateZ(0);
+  font-family: 'Inter', sans-serif;
+}
+
+.print-button:hover {
+  background: linear-gradient(145deg, #2D6A4F, #1B4332);
+  transform: translateY(-1px);
+  box-shadow: 
+    0 4px 8px rgba(45, 106, 79, 0.4),
+    0 2px 4px rgba(45, 106, 79, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.print-button:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 1px 2px rgba(212, 175, 55, 0.3),
+    inset 0 1px 0 rgba(0, 0, 0, 0.1);
+}

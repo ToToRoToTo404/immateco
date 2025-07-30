@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
+    <section class="hero">
+      <div class="container">
+        <h2>Bienvenue chez IMMAT&CO</h2>
+        <h3>Saint-Palais</h3>
+        <p>Votre partenaire de confiance pour toutes vos démarches d'immatriculation de véhicules.</p>
+      </div>
+    </section>  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IMMAT&CO - Accueil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
@@ -41,22 +49,96 @@
     <div id="announcement" >
       <p></p>
     </div>
-    <section class="services">
+    <section class="services-home">
       <div class="container">
-        <div>
-          <h2>Nos Services</h2>
-          <ul>
-            <li>Immatriculation de véhicules neufs et d'occasion</li>
-            <li>Changement de titulaire</li>
-            <li>Changement d'adresse</li>
-            <li>Duplicata de carte grise</li>
-            <li>Assistance administrative</li>
-            <li>Et bien plus encore...</li>
-          </ul>
-          <a href="services.html" class="btn" style="text-decoration: none; border-bottom: none;">Consulter nos services</a>
+        <h2>Nos Services</h2>
+        <p>IMMAT&CO vous accompagne dans toutes vos démarches d'immatriculation</p>
+        
+        <div class="services-grid">
+          <a href="vehicules_neufs.html" class="service-card animate-on-scroll">
+            <div class="card-icon">🚗</div>
+            <div class="card-content">
+              <h3>Immatriculation Véhicules</h3>
+              <p>Neufs et d'occasion, nous gérons toutes vos immatriculations</p>
+            </div>
+          </a>
+
+          <a href="changement-titulaire-carte-grise.html" class="service-card animate-on-scroll">
+            <div class="card-icon">🔄</div>
+            <div class="card-content">
+              <h3>Changement de Titulaire</h3>
+              <p>Transfert de propriété rapide et sécurisé</p>
+            </div>
+          </a>
+
+          <a href="changement_adresse.html" class="service-card animate-on-scroll">
+            <div class="card-icon">🏠</div>
+            <div class="card-content">
+              <h3>Changement d'Adresse</h3>
+              <p>Mise à jour de votre domicile sur la carte grise</p>
+            </div>
+          </a>
+
+          <a href="duplicata.html" class="service-card animate-on-scroll">
+            <div class="card-icon">📄</div>
+            <div class="card-content">
+              <h3>Duplicata Carte Grise</h3>
+              <p>Remplacement en cas de perte ou de vol</p>
+            </div>
+          </a>
+
+          <a href="services.html" class="service-card animate-on-scroll">
+            <div class="card-icon">🎯</div>
+            <div class="card-content">
+              <h3>Assistance Administrative</h3>
+              <p>Accompagnement personnalisé pour vos démarches</p>
+            </div>
+          </a>
+
+          <a href="services.html" class="service-card animate-on-scroll">
+            <div class="card-icon">⚡</div>
+            <div class="card-content">
+              <h3>Service Express</h3>
+              <p>Sans rendez-vous</p>
+            </div>
+          </a>
         </div>
-        <div class="image">
-          <img src="images/photo-bureau.jpg" alt="Un bureau pensé pour les services d'immatriculation, entourée de commerces, dotée d'un grand parking créant une atmosphère accueillante et professionnelle pour les clients">
+
+        <div class="services-cta">
+          <a href="services.html" class="btn-modern">Découvrir tous nos services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Image et Présentation -->
+    <section class="about-section">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text">
+            <h2>Un bureau pensé pour vous</h2>
+            <p>Situé à Saint-Palais, notre bureau est spécialement conçu pour vous offrir un service d'immatriculation professionnel et efficace.</p>
+            <div class="features">
+              <div class="feature-item">
+                <span class="feature-icon">🅿️</span>
+                <span>Parking gratuit</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">⏰</span>
+                <span>Sans rendez-vous</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">🏪</span>
+                <span>Entouré de commerces</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">✨</span>
+                <span>Atmosphère accueillante</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-image">
+            <img src="images/photo-bureau.jpg" alt="Bureau IMMAT&CO à Saint-Palais" class="bureau-image">
+          </div>
         </div>
       </div>
     </section>
